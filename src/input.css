@@ -11,7 +11,7 @@
 }
 
 .arrow-down {
- @apply h-0 w-0 border-[5px] border-b-0 border-x-transparent border-t-black;
+ @apply h-0 w-0 border-[6px] border-b-0 border-x-transparent border-t-gray-400;
 }
 
 .arrow-up {
