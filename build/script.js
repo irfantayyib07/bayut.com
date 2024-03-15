@@ -39,32 +39,43 @@ tabsContainer.addEventListener("click", (e) => {
 const residentialLabel = document.getElementById("residential-label");
 const dropdown = document.getElementById("dropdown");
 const residentialSelect = document.getElementById("residential-select");
-
-residentialLabel.addEventListener("click", (e) => {
- if (e.target.tagName !== "LABEL") return;
- dropdown.classList.remove("w-0", "h-0", "invisible");
-});
+const selectToggle = document.getElementById("select-toggle");
+const arrow = document.getElementById("arrow")
 
 dropdown.addEventListener("click", (e) => {
  if (e.target.closest("#tab-options-container") && e.target.tagName === "SPAN") {
-  dropdown.classList.add("w-0", "h-0", "invisible");
+  selectToggle.checked = false;
   residentialLabel.childNodes[0].replaceWith(e.target.textContent);
   for (let option of residentialSelect.options) {
    if (option.textContent === e.target.textContent) option.selected = true;
   }
+
+  for (let span of e.target.parentElement.children) {
+   span.classList.remove("selected-option");
+   if (span === e.target) e.target.classList.add("selected-option");
+  }
  }
 
- if (e.target.id === "done-button") dropdown.classList.add("w-0", "h-0", "invisible");
+ if (e.target.id === "done-button") selectToggle.checked = false;
  if (e.target.id === "reset-button") {
   residentialSelect.value = null;
   residentialLabel.childNodes[0].replaceWith("Category1");
-  dropdown.classList.add("w-0", "h-0", "invisible");
+  selectToggle.checked = false;
+  
+  for (let span of tabOptionsContainer.children[0].children) {
+   span.classList.remove("selected-option");
+  }
  }
 });
 
 document.addEventListener("click", (e) => {
- if (!!e.target.closest("#tab-options-container")) return;
+ if (!e.target.closest("#residential-container")) selectToggle.checked = false;
 
- const isNotLabel = e.target.closest("label")?.id !== "residential-label";
- if (isNotLabel) dropdown.classList.add("w-0", "h-0", "invisible");
+ if (selectToggle.checked) {
+  dropdown.classList.remove("w-0", "h-0", "invisible");
+  arrow.style.transform = "scaleY(-1)";
+ } else {
+  dropdown.classList.add("w-0", "h-0", "invisible");
+  arrow.style.transform = "scaleY(1)";
+ }
 });

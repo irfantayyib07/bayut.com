@@ -21,3 +21,7 @@
 .selected-tab {
  @apply border-b-green-600 font-semibold text-green-600;
 }
+
+.selected-option {
+ @apply bg-green-50 font-semibold text-green-600 border-green-600;
+}
