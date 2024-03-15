@@ -61,9 +61,13 @@ dropdown.addEventListener("click", (e) => {
   residentialSelect.value = null;
   residentialLabel.childNodes[0].replaceWith("Category1");
   selectToggle.checked = false;
-  
-  for (let span of tabOptionsContainer.children[0].children) {
-   span.classList.remove("selected-option");
+
+  for (let options of tabOptionsContainer.children) {
+   if (!options.classList.contains("invisible")) {
+    for (let option of options.children) {
+     option.classList.remove("selected-option");
+    }
+   }
   }
  }
 });
