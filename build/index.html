@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+  <title>Document</title>
+ </head>
+
+ <body class="flex min-h-screen w-screen items-center justify-center bg-yellow-950">
+  <div class="grid basis-3/4 grid-cols-12 gap-3 rounded-md bg-black bg-opacity-50 p-4 text-white">
+   <!-- ROW FIRST -->
+   <!-- LOCATION SEARCH BAR -->
+   <div class="col-span-8 flex">
+    <label class="flex cursor-pointer rounded-bl-md rounded-tl-md bg-white p-3 text-black" for="location"
+     ><img src="./assets/location.svg" alt="location" class="w-6 self-center"
+    /></label>
+    <input
+     class="w-full rounded-md rounded-bl-none rounded-tl-none px-2 py-3 text-black focus:outline-none"
+     type="text"
+     id="location"
+     placeholder="Enter Location"
+    />
+   </div>
+
+   <!-- RADIO BUTTONS (RENT, BUY, OFFPLAN) -->
+   <input class="invisible absolute h-0 w-0" type="radio" name="options" id="rent" value="Rent" />
+   <input class="invisible absolute h-0 w-0" type="radio" name="options" id="buy" value="Buy" />
+   <input class="invisible absolute h-0 w-0" type="radio" name="options" id="offplan" value="Off Plan" />
+   <div class="col-start-9 col-end-13 flex gap-1 rounded-md bg-white p-1" id="radio-button-container">
+    <label
+     for="rent"
+     class="flex flex-1 cursor-pointer select-none items-center justify-center rounded-md text-black"
+     id="rent-label"
+     >Rent</label
+    >
+    <label
+     for="buy"
+     class="flex flex-1 cursor-pointer select-none items-center justify-center rounded-md text-black"
+     id="buy-label"
+     >Buy</label
+    >
+    <label
+     for="offplan"
+     class="flex flex-1 cursor-pointer select-none items-center justify-center rounded-md text-black"
+     id="offplan-label"
+     >Off Plan</label
+    >
+   </div>
+
+   <!-- ROW SECOND -->
+   <div class="col-span-8 flex gap-2">
+    <!-- SELECT FIRST -->
+    <!-- DROP DOWN TOGGLE -->
+    <label
+     id="residential-label"
+     class="relative flex w-7 flex-grow cursor-pointer select-none justify-between rounded-md bg-white px-2 py-3 text-black"
+     >Category1
+     <span class="arrow-down self-center"></span>
+
+     <select name="residential" id="residential-select" class="invisible absolute h-0 w-0">
+      <option value=""></option>
+      <option value="Category1 Option1">Category1Option1</option>
+      <option value="Category1 Option2">Category1Option2</option>
+      <option value="Category2 Option1">Category2Option1</option>
+      <option value="Category2 Option2">Category2Option2</option>
+     </select>
+
+     <!-- DROP DOWN MENU -->
+     <div
+      class="invisible absolute right-0 top-full mt-3 flex h-0 w-0 w-[140%] min-w-80 flex-col gap-6 bg-white p-3"
+      id="dropdown"
+     >
+      <span class="arrow-up absolute right-1 top-[-7px]"></span>
+      <!-- TABS -->
+      <div class="flex w-full" id="tabs-container">
+       <button
+        class="selected-tab flex-1 cursor-pointer select-none border-b-2 pb-1 text-center text-black"
+        id="category1-tab"
+        data-controls="category1-options"
+       >
+        Category1
+       </button>
+       <button
+        class="flex-1 cursor-pointer select-none border-b-2 pb-1 text-center text-black"
+        id="category2-tab"
+        data-controls="category2-options"
+       >
+        Category2
+       </button>
+      </div>
+
+      <!-- TAB 1 CONTENT -->
+      <div id="tab-options-container">
+       <div class="grid grid-cols-2 gap-2" id="category1-options">
+        <span
+         class="col-span-1 cursor-pointer select-none rounded-md rounded-l-full rounded-r-full border px-2 py-1 text-center text-sm text-black hover:bg-slate-100"
+         id="category1option1-label"
+         >Category1Option1</span
+        >
+        <span
+         class="col-span-1 cursor-pointer select-none rounded-l-full rounded-r-full border px-2 py-1 text-center text-sm text-black hover:bg-slate-100"
+         id="category1option2-label"
+         >Category1Option2</span
+        >
+       </div>
+       <!-- TAB 2 CONTENT -->
+       <div class="grid grid-cols-2 gap-2" id="category2-options">
+        <span
+         class="col-span-1 cursor-pointer select-none rounded-l-full rounded-r-full border px-2 py-1 text-center text-sm text-black hover:bg-slate-100"
+         id="category2option1-label"
+         >Category2Option1</span
+        >
+        <span
+         class="col-span-1 cursor-pointer select-none rounded-l-full rounded-r-full border px-2 py-1 text-center text-sm text-black hover:bg-slate-100"
+         id="category2option2-label"
+         >Category2Option2</span
+        >
+       </div>
+      </div>
+
+      <div class="button-container flex flex-grow gap-2">
+       <button class="inline-block flex-grow border border-teal-900 p-1 text-teal-900" id="reset-button">Reset</button>
+       <button class="inline-block flex-grow bg-teal-900 p-1 text-white outline" id="done-button">Done</button>
+      </div>
+     </div>
+     <!-- DROPDOWN MENU ENDS HERE -->
+    </label>
+
+    <!-- SELECT SECOND -->
+    <label
+     id="residential-label"
+     class="relative flex w-7 flex-grow cursor-pointer select-none justify-between rounded-md bg-white px-2 py-3 text-black"
+     >Beds & Baths
+     <span class="arrow-down self-center"></span>
+    </label>
+
+    <!-- SELECT THIRD -->
+    <label
+     id="residential-label"
+     class="relative flex w-7 flex-grow cursor-pointer select-none justify-between rounded-md bg-white px-2 py-3 text-black"
+     >Price (AED)
+     <span class="arrow-down self-center"></span>
+    </label>
+   </div>
+
+   <!-- FIND BUTTON -->
+   <button class="col-start-9 col-end-13 rounded-md bg-green-600 px-2 py-3">Find</button>
+
+   <!-- ROW THIRD -->
+   <a class="bg-haver col-span-12 rounded-md px-2 py-3" href="">Search 2.0</a>
+  </div>
+
+  <script src="./script.js"></script>
+ </body>
+</html>

@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-haver {
+ background-image: url("../assets/JPEG 1280x720 (5).jpeg");
+}
+
+.checked-radio-label {
+ @apply bg-green-50 font-semibold text-green-600;
+}
+
+.arrow-down {
+ @apply h-0 w-0 border-[5px] border-b-0 border-x-transparent border-t-black;
+}
+
+.arrow-up {
+ @apply h-0 w-0 border-[8px] border-t-0 border-x-transparent border-b-white;
+}
+
+.selected-tab {
+ @apply border-b-green-600 font-semibold text-green-600;
+}
