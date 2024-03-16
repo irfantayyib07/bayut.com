@@ -15,7 +15,7 @@
 }
 
 .arrow-up {
- @apply h-0 w-0 border-[8px] border-t-0 border-x-transparent border-b-white;
+ @apply h-0 w-0 border-t-0 border-x-transparent;
 }
 
 .selected-tab {
