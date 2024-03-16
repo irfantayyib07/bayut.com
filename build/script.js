@@ -6,11 +6,13 @@ const RADIO_BUTTONS_CONTAINER = document.getElementById("RADIO_BUTTONS_CONTAINER
 
 RADIO_BUTTONS_CONTAINER.addEventListener("click", (e) => {
  if (e.target.tagName !== "LABEL") return;
- for (let elem of e.target.parentElement.children) elem.classList.remove("checked-radio-label");
+ for (let elem of RADIO_BUTTONS_CONTAINER.children) elem.classList.remove("checked-radio-label");
  e.target.classList.add("checked-radio-label");
 });
 
-// TABS
+// SELECT_FIRST DD (DROPDOWN)
+
+// DD TABS
 
 const SELECT_FIRST_TABS_CONTAINER = document.getElementById("SELECT_FIRST_TABS_CONTAINER");
 const SELECT_FIRST_TAB_OPTIONS_CONTAINER = document.getElementById("SELECT_FIRST_TAB_OPTIONS_CONTAINER");
@@ -34,7 +36,7 @@ SELECT_FIRST_TABS_CONTAINER.addEventListener("click", (e) => {
  }
 });
 
-// SELECT FIRST DROPDOWN
+// DD TABS LOGIC ENDS HERE
 
 const SELECT_FIRST_LABEL = document.getElementById("SELECT_FIRST_LABEL");
 const SELECT_FIRST_DROPDOWN = document.getElementById("SELECT_FIRST_DROPDOWN");
@@ -42,7 +44,7 @@ const SELECT_FIRST = document.getElementById("SELECT_FIRST");
 const SELECT_TOGGLER = document.getElementById("SELECT_TOGGLER");
 const SELECT_FIRST_CHEVRON = document.getElementById("SELECT_FIRST_CHEVRON");
 
-SELECT_FIRST.options[0].selected = true; // to reset the value of select to empty string upon page
+SELECT_FIRST.options[0].selected = true; // to reset the value of select to empty string upon page reload
 
 SELECT_FIRST_DROPDOWN.addEventListener("click", (e) => {
  if (e.target.closest("#SELECT_FIRST_TAB_OPTIONS_CONTAINER") && e.target.tagName === "SPAN") {
