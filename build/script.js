@@ -51,7 +51,6 @@ SELECT_FIRST.options[0].selected = true; // to reset the value of select to empt
 SELECT_FIRST_DROPDOWN.addEventListener("click", (e) => {
  if (e.target.closest("#SELECT_FIRST_TAB_OPTIONS_CONTAINER") && e.target.tagName === "SPAN") {
   SELECT_TOGGLER.checked = false;
-  console.log(SELECT_FIRST_LABEL.childNodes[0]);
   SELECT_FIRST_LABEL.childNodes[0].textContent = e.target.textContent;
   for (let option of SELECT_FIRST.options) {
    if (option.textContent === e.target.textContent) option.selected = true;
