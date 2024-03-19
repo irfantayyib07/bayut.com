@@ -51,7 +51,8 @@ SELECT_FIRST.options[0].selected = true; // to reset the value of select to empt
 SELECT_FIRST_DROPDOWN.addEventListener("click", (e) => {
  if (e.target.closest("#SELECT_FIRST_TAB_OPTIONS_CONTAINER") && e.target.tagName === "SPAN") {
   SELECT_TOGGLER.checked = false;
-  SELECT_FIRST_LABEL.childNodes[0].replaceWith(e.target.textContent);
+  console.log(SELECT_FIRST_LABEL.childNodes[0]);
+  SELECT_FIRST_LABEL.childNodes[0].textContent = e.target.textContent;
   for (let option of SELECT_FIRST.options) {
    if (option.textContent === e.target.textContent) option.selected = true;
   }
@@ -67,7 +68,7 @@ SELECT_FIRST_DROPDOWN.addEventListener("click", (e) => {
  if (e.target.id === "SELECT_FIRST_DD_DONE_BUTTON") SELECT_TOGGLER.checked = false;
  if (e.target.id === "SELECT_FIRST_DD_RESET_BUTTON") {
   SELECT_FIRST.value = null;
-  SELECT_FIRST_LABEL.childNodes[0].replaceWith("Category1");
+  SELECT_FIRST_LABEL.childNodes[0].textContent = "Category1";
   SELECT_TOGGLER.checked = false;
 
   for (let options of SELECT_FIRST_TAB_OPTIONS_CONTAINER.children) {

@@ -55,13 +55,13 @@
    <div class="flex flex-wrap gap-2 sm:col-span-8 sm:flex-nowrap">
     <!-- SELECT FIRST -->
     <!-- DROP DOWN TOGGLE -->
-    <div id="SELECT_FIRST_CONTAINER" class="relative w-7 min-w-fit flex-grow cursor-pointer">
+    <div id="SELECT_FIRST_CONTAINER" class="relative w-7 flex-1 cursor-pointer">
      <input type="checkbox" id="SELECT_TOGGLER" class="hidden" />
      <label
       for="SELECT_TOGGLER"
       id="SELECT_FIRST_LABEL"
       class="flex cursor-pointer select-none justify-between rounded-md bg-white px-2 py-3 text-black"
-      >Category1
+      ><span class="flex-grow overflow-hidden text-ellipsis whitespace-nowrap">Category1</span>
       <span class="arrow-down self-center" id="SELECT_FIRST_CHEVRON"></span>
      </label>
      <select name="SELECT_FIRST" id="SELECT_FIRST" class="invisible absolute h-0 w-0">
@@ -76,7 +76,7 @@
       class="invisible absolute top-full z-10 mt-3 flex h-0 w-0 w-max flex-col gap-6 rounded-md bg-white px-3 pb-3"
       id="SELECT_FIRST_DROPDOWN"
      >
-      <span class="arrow-up absolute -top-2 left-4 border-[8px] border-b-white"></span>
+      <!-- <span class="arrow-up absolute bottom-full left-4 border-[8px] border-b-white"></span> -->
       <!-- TABS -->
       <div class="flex w-full" id="SELECT_FIRST_TABS_CONTAINER">
        <button
@@ -146,15 +146,15 @@
     <!-- SELECT SECOND -->
     <label
      id="residential-label"
-     class="relative flex w-7 min-w-fit flex-grow cursor-pointer select-none justify-between rounded-md bg-white px-2 py-3 text-black"
-     >Beds & Baths
+     class="relative flex w-7 flex-1 cursor-pointer select-none justify-between rounded-md bg-white px-2 py-3 text-black"
+     ><span class="flex-grow overflow-hidden text-ellipsis whitespace-nowrap">Beds & Baths</span>
      <span class="arrow-down self-center"></span>
     </label>
     <!-- SELECT THIRD -->
     <label
      id="residential-label"
-     class="relative flex w-7 min-w-fit flex-grow cursor-pointer select-none justify-between rounded-md bg-white px-2 py-3 text-black"
-     >Price (AED)
+     class="relative flex w-7 flex-1 cursor-pointer select-none justify-between rounded-md bg-white px-2 py-3 text-black"
+     ><span class="flex-grow overflow-hidden text-ellipsis whitespace-nowrap">Price (AED)</span>
      <span class="arrow-down self-center"></span>
     </label>
    </div>
