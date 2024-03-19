@@ -643,6 +643,18 @@ video {
   min-width: min-content;
 }
 
+.min-w-0 {
+  min-width: 0px;
+}
+
+.min-w-28 {
+  min-width: 7rem;
+}
+
+.min-w-32 {
+  min-width: 8rem;
+}
+
 .max-w-fit {
   max-width: -moz-fit-content;
   max-width: fit-content;
@@ -999,6 +1011,24 @@ video {
     min-width: 560px;
   }
 
+  .sm\:min-w-full {
+    min-width: 100%;
+  }
+
+  .sm\:min-w-max {
+    min-width: -moz-max-content;
+    min-width: max-content;
+  }
+
+  .sm\:min-w-min {
+    min-width: -moz-min-content;
+    min-width: min-content;
+  }
+
+  .sm\:min-w-0 {
+    min-width: 0px;
+  }
+
   .sm\:grid-cols-12 {
     grid-template-columns: repeat(12, minmax(0, 1fr));
   }
@@ -1009,6 +1039,10 @@ video {
 
   .sm\:flex-nowrap {
     flex-wrap: nowrap;
+  }
+
+  .sm\:whitespace-nowrap {
+    white-space: nowrap;
   }
 
   .sm\:p-0 {
