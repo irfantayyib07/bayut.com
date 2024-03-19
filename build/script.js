@@ -102,13 +102,13 @@ if (coords.left < 5) {
  SELECT_FIRST_DROPDOWN.classList.add("left-0");
 }
 
-window.addEventListener("resize", function(e) {
+window.addEventListener("resize", function (e) {
  let coords = SELECT_FIRST_DROPDOWN.getBoundingClientRect();
 
  if (coords.left < 5) {
   SELECT_FIRST_DROPDOWN.classList.remove("right-0");
   SELECT_FIRST_DROPDOWN.classList.add("left-0");
-  
+
   SELECT_FIRST_ARROW_UP.classList.remove("right-4");
   SELECT_FIRST_ARROW_UP.classList.add("left-4");
  }

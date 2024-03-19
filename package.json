@@ -4,7 +4,8 @@
   "description": "",
   "main": "tailwind-default.config.js",
   "scripts": {
-    "tailwind": "npx tailwindcss -i src/input.css -o build/css/style.css -w"
+    "tailwind": "npx tailwindcss -i src/input.css -o build/css/style.css -w",
+    "prettier": "prettier --write ."
   },
   "keywords": [],
   "author": "",
