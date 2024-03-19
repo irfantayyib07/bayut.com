@@ -43,6 +43,7 @@ for (let elem of SELECT_FIRST_TAB_OPTIONS_CONTAINER.children) {
 const SELECT_TOGGLER = document.getElementById("SELECT_TOGGLER");
 const SELECT_FIRST_LABEL = document.getElementById("SELECT_FIRST_LABEL");
 const SELECT_FIRST_CHEVRON = document.getElementById("SELECT_FIRST_CHEVRON");
+const SELECT_FIRST_ARROW_UP = document.getElementById("SELECT_FIRST_ARROW_UP");
 const SELECT_FIRST_DROPDOWN = document.getElementById("SELECT_FIRST_DROPDOWN");
 const SELECT_FIRST = document.getElementById("SELECT_FIRST"); // <select> element to send the data to the server
 
@@ -90,5 +91,33 @@ document.addEventListener("click", (e) => {
  } else {
   SELECT_FIRST_DROPDOWN.classList.add("w-0", "h-0", "invisible");
   SELECT_FIRST_CHEVRON.style.transform = "scaleY(1)";
+ }
+});
+
+// DD ORIENTATION CHANGE LOGIC
+
+let coords = SELECT_FIRST_DROPDOWN.getBoundingClientRect();
+if (coords.left < 5) {
+ SELECT_FIRST_DROPDOWN.classList.remove("right-0");
+ SELECT_FIRST_DROPDOWN.classList.add("left-0");
+}
+
+window.addEventListener("resize", function(e) {
+ let coords = SELECT_FIRST_DROPDOWN.getBoundingClientRect();
+
+ if (coords.left < 5) {
+  SELECT_FIRST_DROPDOWN.classList.remove("right-0");
+  SELECT_FIRST_DROPDOWN.classList.add("left-0");
+  
+  SELECT_FIRST_ARROW_UP.classList.remove("right-4");
+  SELECT_FIRST_ARROW_UP.classList.add("left-4");
+ }
+
+ if (SELECT_FIRST_LABEL.getBoundingClientRect().right > SELECT_FIRST_DROPDOWN.offsetWidth + 5) {
+  SELECT_FIRST_DROPDOWN.classList.remove("left-0");
+  SELECT_FIRST_DROPDOWN.classList.add("right-0");
+
+  SELECT_FIRST_ARROW_UP.classList.remove("left-4");
+  SELECT_FIRST_ARROW_UP.classList.add("right-4");
  }
 });

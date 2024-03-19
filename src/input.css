@@ -14,26 +14,22 @@
  @apply h-0 w-0 border-[6px] border-b-0 border-x-transparent border-t-gray-400;
 }
 
-/* .arrow-up {
+.arrow-up {
  @apply h-0 w-0 border-t-0 border-x-transparent;
-} */
+}
 
 .selected-tab {
- @apply border-b-green-600 font-semibold text-green-600;
+ @apply border-b-green-600 text-green-600;
 }
 
 .selected-option {
  @apply border-green-600 bg-green-50 font-semibold text-green-600;
 }
 
-#SELECT_FIRST_DROPDOWN::before {
- content: "";
- position: absolute;
- width: 0;
- height: 0;
- bottom: 100%;
- left: .75rem;
- border: 8px solid transparent;
- border-top: 0;
- border-bottom: 8px solid white;
+/* #SELECT_FIRST_CONTAINER {
+ filter: drop-shadow(0 0 2px black);
 }
+
+#SELECT_FIRST_DROPDOWN {
+ clip-path: polygon(0 100%, 100% 100%, 100% 8px, calc(100% - 12px) 8px, calc(100% - 20px) 0, calc(100% - 28px) 8px, 0% 8px);
+} */

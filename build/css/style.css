@@ -560,8 +560,12 @@ video {
   bottom: 100%;
 }
 
-.left-4 {
-  left: 1rem;
+.right-0 {
+  right: 0px;
+}
+
+.right-4 {
+  right: 1rem;
 }
 
 .top-full {
@@ -578,6 +582,10 @@ video {
 
 .mt-3 {
   margin-top: 0.75rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
 }
 
 .inline-block {
@@ -887,14 +895,17 @@ video {
   border-top-color: rgb(156 163 175 / var(--tw-border-opacity));
 }
 
-/* .arrow-up {
- @apply h-0 w-0 border-t-0 border-x-transparent;
-} */
+.arrow-up {
+  height: 0px;
+  width: 0px;
+  border-top-width: 0px;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
 
 .selected-tab {
   --tw-border-opacity: 1;
   border-bottom-color: rgb(22 163 74 / var(--tw-border-opacity));
-  font-weight: 600;
   --tw-text-opacity: 1;
   color: rgb(22 163 74 / var(--tw-text-opacity));
 }
@@ -909,17 +920,13 @@ video {
   color: rgb(22 163 74 / var(--tw-text-opacity));
 }
 
-#SELECT_FIRST_DROPDOWN::before {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 0;
-  bottom: 100%;
-  left: .75rem;
-  border: 8px solid transparent;
-  border-top: 0;
-  border-bottom: 8px solid white;
+/* #SELECT_FIRST_CONTAINER {
+ filter: drop-shadow(0 0 2px black);
 }
+
+#SELECT_FIRST_DROPDOWN {
+ clip-path: polygon(0 100%, 100% 100%, 100% 8px, calc(100% - 12px) 8px, calc(100% - 20px) 0, calc(100% - 28px) 8px, 0% 8px);
+} */
 
 .hover\:bg-slate-100:hover {
   --tw-bg-opacity: 1;
