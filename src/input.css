@@ -34,6 +34,10 @@
  clip-path: polygon(0 100%, 100% 100%, 100% 8px, calc(100% - 12px) 8px, calc(100% - 20px) 0, calc(100% - 28px) 8px, 0% 8px);
 } */
 
+/* #SELECT_FIRST_DROPDOWN {
+ clip-path: url(#2);
+} */
+
 /* DD animations */
 
 /* #SELECT_FIRST_DROPDOWN {
