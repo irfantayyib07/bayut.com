@@ -48,6 +48,8 @@ const SELECT_FIRST_DROPDOWN = document.getElementById("SELECT_FIRST_DROPDOWN");
 const SELECT_FIRST = document.getElementById("SELECT_FIRST"); // <select> element to send the data to the server
 
 SELECT_FIRST.options[0].selected = true; // to reset the value of select to empty string upon page reload
+// const height = SELECT_FIRST_DROPDOWN.offsetHeight + 12;
+// const width = height * 1.75;
 
 SELECT_FIRST_DROPDOWN.addEventListener("click", (e) => {
  if (e.target.closest("#SELECT_FIRST_TAB_OPTIONS_CONTAINER") && e.target.tagName === "SPAN") {
@@ -86,11 +88,16 @@ document.addEventListener("click", (e) => {
  if (!e.target.closest("#SELECT_FIRST_CONTAINER")) SELECT_TOGGLER.checked = false;
 
  if (SELECT_TOGGLER.checked) {
-  SELECT_FIRST_DROPDOWN.classList.remove("w-0", "h-0", "invisible");
-  SELECT_FIRST_CHEVRON.style.transform = "scaleY(-1)";
+  SELECT_FIRST_DROPDOWN.classList.remove("invisible");
+  SELECT_FIRST_DROPDOWN.style.paddingBottom = "12px";
+  // SELECT_FIRST_DROPDOWN.style.maxHeight = height + "px";
+  // SELECT_FIRST_DROPDOWN.style.width = width + "px";
+  SELECT_FIRST_CHEVRON.style.transform = "rotate(180deg)";
  } else {
-  SELECT_FIRST_DROPDOWN.classList.add("w-0", "h-0", "invisible");
-  SELECT_FIRST_CHEVRON.style.transform = "scaleY(1)";
+  SELECT_FIRST_DROPDOWN.classList.add("invisible");
+  // SELECT_FIRST_DROPDOWN.style.paddingBottom = "";
+  // SELECT_FIRST_DROPDOWN.style.maxHeight = 0;
+  SELECT_FIRST_CHEVRON.style.transform = "rotateY(360deg)";
  }
 });
 
