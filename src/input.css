@@ -35,7 +35,7 @@
 } */
 
 /* #SELECT_FIRST_DROPDOWN {
- clip-path: url(#2);
+ clip-path: url(#shape);
 } */
 
 /* DD animations */
@@ -47,3 +47,7 @@
 #SELECT_FIRST_CHEVRON {
  transition: .4s linear;
 } */
+
+.shadow-custom {
+ box-shadow: 0 0 8px -3px black;
+}
