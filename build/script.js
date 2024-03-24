@@ -40,7 +40,7 @@ for (let elem of SELECT_FIRST_TAB_OPTIONS_CONTAINER.children) {
 
 // DD TABS LOGIC ENDS HERE
 
-const SELECT_TOGGLER = document.getElementById("SELECT_TOGGLER");
+const SELECT_FIRST_TOGGLER = document.getElementById("SELECT_FIRST_TOGGLER");
 const SELECT_FIRST_LABEL = document.getElementById("SELECT_FIRST_LABEL");
 const SELECT_FIRST_CHEVRON = document.getElementById("SELECT_FIRST_CHEVRON");
 const SELECT_FIRST_ARROW_UP = document.getElementById("SELECT_FIRST_ARROW_UP");
@@ -53,7 +53,7 @@ SELECT_FIRST.options[0].selected = true; // to reset the value of select to empt
 
 SELECT_FIRST_DROPDOWN.addEventListener("click", (e) => {
  if (e.target.closest("#SELECT_FIRST_TAB_OPTIONS_CONTAINER") && e.target.tagName === "SPAN") {
-  SELECT_TOGGLER.checked = false;
+  SELECT_FIRST_TOGGLER.checked = false;
   SELECT_FIRST_LABEL.childNodes[0].textContent = e.target.textContent;
   for (let option of SELECT_FIRST.options) {
    if (option.textContent === e.target.textContent) option.selected = true;
@@ -67,11 +67,11 @@ SELECT_FIRST_DROPDOWN.addEventListener("click", (e) => {
   }
  }
 
- if (e.target.id === "SELECT_FIRST_DD_DONE_BUTTON") SELECT_TOGGLER.checked = false;
+ if (e.target.id === "SELECT_FIRST_DD_DONE_BUTTON") SELECT_FIRST_TOGGLER.checked = false;
  if (e.target.id === "SELECT_FIRST_DD_RESET_BUTTON") {
   SELECT_FIRST.value = null;
   SELECT_FIRST_LABEL.childNodes[0].textContent = "Category1";
-  SELECT_TOGGLER.checked = false;
+  SELECT_FIRST_TOGGLER.checked = false;
 
   for (let options of SELECT_FIRST_TAB_OPTIONS_CONTAINER.children) {
    for (let option of options.children) {
@@ -85,9 +85,9 @@ SELECT_FIRST_DROPDOWN.addEventListener("click", (e) => {
 
 document.addEventListener("click", (e) => {
  console.log(SELECT_FIRST.value);
- if (!e.target.closest("#SELECT_FIRST_CONTAINER")) SELECT_TOGGLER.checked = false;
+ if (!e.target.closest("#SELECT_FIRST_CONTAINER")) SELECT_FIRST_TOGGLER.checked = false;
 
- if (SELECT_TOGGLER.checked) {
+ if (SELECT_FIRST_TOGGLER.checked) {
   SELECT_FIRST_DROPDOWN.classList.remove("invisible");
   SELECT_FIRST_DROPDOWN.style.paddingBottom = "12px";
   // SELECT_FIRST_DROPDOWN.style.maxHeight = height + "px";
