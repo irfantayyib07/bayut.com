@@ -109,16 +109,16 @@ function flipDropDown() {
   SELECT_FIRST_DROPDOWN.classList.remove("right-0");
   SELECT_FIRST_DROPDOWN.classList.add("left-0");
  
-  SELECT_FIRST_ARROW_UP.classList.remove("right-4");
-  SELECT_FIRST_ARROW_UP.classList.add("left-4");
+  SELECT_FIRST_ARROW_UP.classList.remove("right-[14px]");
+  SELECT_FIRST_ARROW_UP.classList.add("left-[14px]");
  }
  
  if (SELECT_FIRST_LABEL.getBoundingClientRect().right > SELECT_FIRST_DROPDOWN.offsetWidth + 5) {
   SELECT_FIRST_DROPDOWN.classList.remove("left-0");
   SELECT_FIRST_DROPDOWN.classList.add("right-0");
  
-  SELECT_FIRST_ARROW_UP.classList.remove("left-4");
-  SELECT_FIRST_ARROW_UP.classList.add("right-4");
+  SELECT_FIRST_ARROW_UP.classList.remove("left-[14px]");
+  SELECT_FIRST_ARROW_UP.classList.add("right-[14px]");
  }
 }
 
