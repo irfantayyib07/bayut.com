@@ -1,11 +1,10 @@
 "use strict";
 
-// const FILTER_FORM = document.getElementById("filter-form");
+const FILTER_FORM = document.getElementById("filter-form");
 
-// FILTER_FORM.onsubmit = (e) => {
-//  e.preventDefault();
-//  console.log(e);
-// }
+document.body.onload = () => {
+ FILTER_FORM.reset();
+}
 
 // RADIO BUTTONS
 
@@ -111,21 +110,21 @@ document.addEventListener("click", (e) => {
 // DD ORIENTATION CHANGE LOGIC
 
 function flipDropDown() {
- let coords = SELECT_FIRST_DROPDOWN.getBoundingClientRect();
- if (coords.left < 5) {
-  SELECT_FIRST_DROPDOWN.classList.remove("right-0");
-  SELECT_FIRST_DROPDOWN.classList.add("left-0");
+ const dropdown = document.querySelector(".dropdown:not(.invisible)");
+ let coords = dropdown?.getBoundingClientRect();
+ if (coords?.left < 5) {
+  dropdown.classList.remove("right-0");
+  dropdown.classList.add("left-0");
 
-  SELECT_FIRST_ARROW_UP.classList.remove("right-[14px]");
-  SELECT_FIRST_ARROW_UP.classList.add("left-[14px]");
+  dropdown.querySelector(".arrow-up").classList.remove("right-[14px]");
+  dropdown.querySelector(".arrow-up").classList.add("left-[14px]");
  }
+ if (dropdown?.parentElement.querySelector("label").getBoundingClientRect().right > dropdown?.offsetWidth + 5) {
+  dropdown.classList.remove("left-0");
+  dropdown.classList.add("right-0");
 
- if (SELECT_FIRST_LABEL.getBoundingClientRect().right > SELECT_FIRST_DROPDOWN.offsetWidth + 5) {
-  SELECT_FIRST_DROPDOWN.classList.remove("left-0");
-  SELECT_FIRST_DROPDOWN.classList.add("right-0");
-
-  SELECT_FIRST_ARROW_UP.classList.remove("left-[14px]");
-  SELECT_FIRST_ARROW_UP.classList.add("right-[14px]");
+  dropdown.querySelector(".arrow-up").classList.remove("left-[14px]");
+  dropdown.querySelector(".arrow-up").classList.add("right-[14px]");
  }
 }
 
@@ -286,17 +285,18 @@ MINIMUM_FIELD.addEventListener("keyup", (e) => {
 });
 
 PRICE_FILTER_CONTAINER.addEventListener("change", (e) => {
- console.log(MINIMUM_FIELD.value);
+ // console.log(MINIMUM_FIELD.value);
  if (MINIMUM_FIELD.value < 0) MINIMUM_FIELD.value = 0;
  if (+MINIMUM_FIELD.value > +MAXIMUM_FIELD.value) MAXIMUM_FIELD.value = MINIMUM_FIELD.value;
  MAXIMUM_FIELD.setAttribute("min", MINIMUM_FIELD.value);
+ if (+MAXIMUM_FIELD.value === 0) MAXIMUM_FIELD.value = "";
  let minAmount = (MINIMUM_FIELD.value / 1000) + "K";
- let maxAmount = parseInt(MAXIMUM_FIELD.value) === 0 ? "Any" : (MAXIMUM_FIELD.value / 1000) + "K";
+ let maxAmount = (parseInt(MAXIMUM_FIELD.value) === 0 || MAXIMUM_FIELD.value === "") ? "Any" : (MAXIMUM_FIELD.value / 1000) + "K";
  SELECT_THIRD_LABEL.childNodes[0].textContent = `AED ${minAmount} - ${maxAmount}`;
 });
 
 document.addEventListener("click", (e) => {
- console.log(`Range ${MINIMUM_FIELD.value} - ${MAXIMUM_FIELD.value}`);
+ // console.log(`Range ${MINIMUM_FIELD.value} - ${MAXIMUM_FIELD.value}`);
  if (!e.target.closest("#SELECT_THIRD_CONTAINER") && !e.target.closest(".nested-dropdown-style")) {
   SELECT_THIRD_TOGGLER.checked = false;
   nestedDropdown.remove();

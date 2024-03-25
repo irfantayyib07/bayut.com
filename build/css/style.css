@@ -654,6 +654,10 @@ video {
   min-width: 8rem;
 }
 
+.min-w-60 {
+  min-width: 15rem;
+}
+
 .flex-1 {
   flex: 1 1 0%;
 }
