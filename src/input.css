@@ -39,7 +39,7 @@
 }
 
 .nested-dropdown-style {
- @apply absolute left-0 right-0 top-full z-10 mt-3 rounded-lg flex flex-col bg-white shadow-custom max-h-60 overflow-scroll overflow-x-hidden;
+ @apply shadow-custom absolute left-0 right-0 top-full z-10 mt-3 flex max-h-60 flex-col overflow-scroll overflow-x-hidden rounded-lg bg-white;
 }
 
 /* #SELECT_FIRST_CONTAINER {
