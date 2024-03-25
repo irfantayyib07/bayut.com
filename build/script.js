@@ -272,19 +272,28 @@ PRICE_FILTER_CONTAINER.addEventListener("click", (e) => {
  }
 
  e.target.classList.add("selected-amount");
- if (MINIMUM_FIELD.value < 0) MINIMUM_FIELD.value = 0;
  e.target.parentElement.previousElementSibling.value = +e.target.textContent.replace(/\D*/g, "");
  e.target.parentElement.previousElementSibling.dispatchEvent(new Event('change', { bubbles: true }));
  nestedDropdown.remove();
 });
 
+MINIMUM_FIELD.addEventListener("keydown", (e) => {
+ if (!((e.key >= "0" && e.key <= "9") || ["ArrowLeft", "ArrowRight", "Delete", "Backspace"].includes(e.key))) e.preventDefault();
+});
+
+MINIMUM_FIELD.addEventListener("keyup", (e) => {
+ e.target.dispatchEvent(new Event('change', { bubbles: true }));
+});
+
 PRICE_FILTER_CONTAINER.addEventListener("change", (e) => {
+ console.log(MINIMUM_FIELD.value);
+ if (MINIMUM_FIELD.value < 0) MINIMUM_FIELD.value = 0;
  if (+MINIMUM_FIELD.value > +MAXIMUM_FIELD.value) MAXIMUM_FIELD.value = MINIMUM_FIELD.value;
  MAXIMUM_FIELD.setAttribute("min", MINIMUM_FIELD.value);
  let minAmount = (MINIMUM_FIELD.value / 1000) + "K";
  let maxAmount = parseInt(MAXIMUM_FIELD.value) === 0 ? "Any" : (MAXIMUM_FIELD.value / 1000) + "K";
  SELECT_THIRD_LABEL.childNodes[0].textContent = `AED ${minAmount} - ${maxAmount}`;
-})
+});
 
 document.addEventListener("click", (e) => {
  console.log(`Range ${MINIMUM_FIELD.value} - ${MAXIMUM_FIELD.value}`);
