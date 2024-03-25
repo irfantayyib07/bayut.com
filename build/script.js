@@ -221,7 +221,7 @@ SELECT_THIRD_DROPDOWN.addEventListener("click", (e) => {
  if (e.target.id === "SELECT_THIRD_DD_DONE_BUTTON") SELECT_THIRD_TOGGLER.checked = false;
  if (e.target.id === "SELECT_THIRD_DD_RESET_BUTTON") {
   SELECT_THIRD_LABEL.childNodes[0].textContent = "Price (AED)";
-  MINIMUM_FIELD.value = "";
+  MINIMUM_FIELD.value = 0;
   MAXIMUM_FIELD.value = "";
   // SELECT_THIRD_TOGGLER.checked = false;
  }
@@ -245,7 +245,6 @@ PRICE_FILTER_CONTAINER.addEventListener("keyup", (e) => {
 });
 
 PRICE_FILTER_CONTAINER.addEventListener("change", (e) => {
- // console.log(MINIMUM_FIELD.value);
  if (MINIMUM_FIELD.value < 0) MINIMUM_FIELD.value = 0;
  if (+MINIMUM_FIELD.value > +MAXIMUM_FIELD.value) MAXIMUM_FIELD.value = MINIMUM_FIELD.value;
  MAXIMUM_FIELD.setAttribute("min", MINIMUM_FIELD.value);
@@ -259,7 +258,7 @@ PRICE_FILTER_CONTAINER.addEventListener("change", (e) => {
 });
 
 document.addEventListener("click", (e) => {
- // console.log(`Range ${MINIMUM_FIELD.value} - ${MAXIMUM_FIELD.value}`);
+ console.log(`Range ${MINIMUM_FIELD.value} - ${MAXIMUM_FIELD.value}`);
  if (!e.target.closest("#SELECT_THIRD_CONTAINER") && !e.target.closest(".nested-dropdown-style")) {
   SELECT_THIRD_TOGGLER.checked = false;
   nestedDropdown.remove();

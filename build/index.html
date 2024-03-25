@@ -11,6 +11,7 @@
   <form
    id="filter-form"
    class="grid basis-3/4 grid-cols-1 gap-3 rounded-md bg-black bg-opacity-50 p-4 sm:min-w-[560px] sm:grid-cols-12"
+   novalidate
   >
    <!-- ROW FIRST -->
    <!-- LOCATION SEARCH BAR (COLUMN FIRST) -->
@@ -181,10 +182,6 @@
        <h2 class="mb-3">Beds</h2>
        <input type="checkbox" name="" id="studio" class="hidden" />
        <input type="checkbox" name="" id="8+" class="hidden" />
-       <input type="checkbox" name="" id="" class="hidden" />
-       <input type="checkbox" name="" id="" class="hidden" />
-       <input type="checkbox" name="" id="" class="hidden" />
-       <input type="checkbox" name="" id="" class="hidden" />
        <div class="flex flex-wrap gap-2">
         <label
          class="cursor-pointer select-none rounded-md rounded-l-full rounded-r-full border px-4 py-1 text-center text-sm hover:bg-gray-100"
@@ -210,10 +207,6 @@
        <h2 class="mb-3">Baths</h2>
        <input type="checkbox" name="" id="1" class="hidden" />
        <input type="checkbox" name="" id="6+" class="hidden" />
-       <input type="checkbox" name="" id="" class="hidden" />
-       <input type="checkbox" name="" id="" class="hidden" />
-       <input type="checkbox" name="" id="" class="hidden" />
-       <input type="checkbox" name="" id="" class="hidden" />
        <div class="flex flex-wrap gap-2">
         <label
          class="cursor-pointer select-none rounded-md rounded-l-full rounded-r-full border px-4 py-1 text-center text-sm hover:bg-gray-100"
@@ -287,7 +280,8 @@
          placeholder="0"
          step="500"
          min="0"
-         name=""
+         value="0"
+         name="minimum"
          id="minimum"
          class="w-full rounded-lg border px-3 py-2 focus:border focus:border-teal-900 focus:outline-none"
         />
@@ -298,7 +292,7 @@
          type="number"
          placeholder="Any"
          step="500"
-         name=""
+         name="maximum"
          id="maximum"
          class="w-full rounded-lg border px-3 py-2 focus:border focus:border-teal-900 focus:outline-none"
         />
