@@ -161,13 +161,6 @@
       ><span class="overflow-hidden text-ellipsis whitespace-nowrap">Beds & Baths</span>
       <span class="arrow-down self-center" id="SELECT_SECOND_CHEVRON"></span>
      </label>
-     <select name="SELECT_SECOND" id="SELECT_SECOND" class="invisible absolute h-0 w-0">
-      <option value=""></option>
-      <option value="Tab1Option1">Tab1Option1</option>
-      <option value="Tab1Option2">Tab1Option2</option>
-      <option value="Tab2Option1">Tab2Option1</option>
-      <option value="Tab2Option2">Tab2Option2</option>
-     </select>
      <!-- DROP DOWN MENU -->
      <div
       class="dropdown shadow-custom invisible absolute right-0 top-full z-10 mt-3 flex w-max flex-col gap-6 rounded-lg bg-white p-3 sm:w-[325px]"
@@ -180,8 +173,9 @@
       <!-- CHECKBOXES / OPTIONS -->
       <div id="BEDS_OPTIONS_CONTAINER">
        <h2 class="mb-3">Beds</h2>
-       <input type="checkbox" name="" id="studio" class="hidden" />
-       <input type="checkbox" name="" id="8+" class="hidden" />
+       <input type="checkbox" name="beds" value="studio" id="studio" class="hidden" />
+       <input type="checkbox" name="beds" value="1" id="1bed" class="hidden" />
+       <input type="checkbox" name="beds" value="8+" id="8+" class="hidden" />
        <div class="flex flex-wrap gap-2">
         <label
          class="cursor-pointer select-none rounded-md rounded-l-full rounded-r-full border px-4 py-1 text-center text-sm hover:bg-gray-100"
@@ -192,7 +186,7 @@
         <label
          class="cursor-pointer select-none rounded-md rounded-l-full rounded-r-full border px-4 py-1 text-center text-sm hover:bg-gray-100"
          id=""
-         for="studio"
+         for="1bed"
          >1</label
         >
         <label
@@ -205,13 +199,13 @@
       </div>
       <div id="BATHS_OPTIONS_CONTAINER">
        <h2 class="mb-3">Baths</h2>
-       <input type="checkbox" name="" id="1" class="hidden" />
-       <input type="checkbox" name="" id="6+" class="hidden" />
+       <input type="checkbox" name="baths" value="1" id="1bath" class="hidden" />
+       <input type="checkbox" name="baths" value="6+" id="6+" class="hidden" />
        <div class="flex flex-wrap gap-2">
         <label
          class="cursor-pointer select-none rounded-md rounded-l-full rounded-r-full border px-4 py-1 text-center text-sm hover:bg-gray-100"
          id=""
-         for="1"
+         for="1bath"
          >1</label
         >
         <label
@@ -255,13 +249,6 @@
       ><span class="overflow-hidden text-ellipsis whitespace-nowrap">Price (AED)</span>
       <span class="arrow-down self-center" id="SELECT_THIRD_CHEVRON"></span>
      </label>
-     <select name="SELECT_THIRD" id="SELECT_THIRD" class="invisible absolute h-0 w-0">
-      <option value=""></option>
-      <option value="Tab1Option1">Tab1Option1</option>
-      <option value="Tab1Option2">Tab1Option2</option>
-      <option value="Tab2Option1">Tab2Option1</option>
-      <option value="Tab2Option2">Tab2Option2</option>
-     </select>
      <!-- DROP DOWN MENU -->
      <div
       class="dropdown shadow-custom invisible absolute right-0 top-full z-10 mt-3 flex min-w-60 flex-col gap-6 rounded-lg bg-white p-3 sm:w-[325px]"
@@ -281,7 +268,7 @@
          step="500"
          min="0"
          value="0"
-         name="minimum"
+         name="minimum-price"
          id="minimum"
          class="w-full rounded-lg border px-3 py-2 focus:border focus:border-teal-900 focus:outline-none"
         />
@@ -292,7 +279,7 @@
          type="number"
          placeholder="Any"
          step="500"
-         name="maximum"
+         name="maximum-price"
          id="maximum"
          class="w-full rounded-lg border px-3 py-2 focus:border focus:border-teal-900 focus:outline-none"
         />
