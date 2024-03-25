@@ -4,6 +4,7 @@ const FILTER_FORM = document.getElementById("filter-form");
 
 document.body.onload = () => {
  FILTER_FORM.reset();
+ window.history.replaceState("", document.title, "/");
 };
 
 // RADIO BUTTONS
