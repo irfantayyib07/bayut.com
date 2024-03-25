@@ -9,14 +9,13 @@
 </head>
 
 <body class="flex min-h-screen w-screen items-center justify-center bg-yellow-950">
- <form
-  class="grid basis-3/4 grid-cols-1 gap-3 rounded-md bg-black bg-opacity-50 p-4 text-white sm:min-w-[560px] sm:grid-cols-12">
+ <form id="filter-form" class="grid basis-3/4 grid-cols-1 gap-3 rounded-md bg-black bg-opacity-50 p-4 sm:min-w-[560px] sm:grid-cols-12">
   <!-- ROW FIRST -->
   <!-- LOCATION SEARCH BAR (COLUMN FIRST) -->
   <div class="flex sm:col-span-8">
-   <label class="flex cursor-pointer rounded-bl-md rounded-tl-md bg-white p-3 text-black" for="location"><img
+   <label class="flex cursor-pointer rounded-bl-md rounded-tl-md bg-white p-3" for="location"><img
      src="./assets/location.svg" alt="location" class="w-6 self-center" /></label>
-   <input class="w-full rounded-md rounded-bl-none rounded-tl-none px-2 py-3 text-black focus:outline-none" type="text"
+   <input class="w-full rounded-md rounded-bl-none rounded-tl-none px-2 py-3 focus:outline-none" type="text"
     id="location" placeholder="Enter Location" />
   </div>
   <!-- RADIO BUTTONS (RENT, BUY, OFFPLAN) (COLUMN SECOND) -->
@@ -25,13 +24,13 @@
    <input class="invisible absolute h-0 w-0" type="radio" name="options" id="BUY" value="VALUE2" />
    <input class="invisible absolute h-0 w-0" type="radio" name="options" id="VALUE3" value="VALUE3" />
    <label for="VALUE1"
-    class="flex flex-grow cursor-pointer select-none items-center justify-center rounded-md p-2 text-black sm:p-0"
+    class="flex flex-grow cursor-pointer select-none items-center justify-center rounded-md p-2 sm:p-0"
     id="VALUE1_LABEL">Value1</label>
    <label for="VALUE2"
-    class="flex flex-grow cursor-pointer select-none items-center justify-center rounded-md p-2 text-black sm:p-0"
+    class="flex flex-grow cursor-pointer select-none items-center justify-center rounded-md p-2 sm:p-0"
     id="VALUE2_LABEL">Value2</label>
    <label for="VALUE3"
-    class="flex flex-grow cursor-pointer select-none items-center justify-center rounded-md p-2 text-black sm:p-0"
+    class="flex flex-grow cursor-pointer select-none items-center justify-center rounded-md p-2 sm:p-0"
     id="VALUE3_LABEL">Value3</label>
   </div>
   <!-- ROW SECOND -->
@@ -41,7 +40,7 @@
    <div id="SELECT_FIRST_CONTAINER" class="relative w-7 min-w-32 flex-grow cursor-pointer sm:min-w-0">
     <input type="checkbox" id="SELECT_FIRST_TOGGLER" class="hidden" />
     <label for="SELECT_FIRST_TOGGLER" id="SELECT_FIRST_LABEL"
-     class="flex cursor-pointer select-none justify-between rounded-md bg-white px-4 py-3 text-black"><span
+     class="flex cursor-pointer select-none justify-between rounded-md bg-white px-4 py-3"><span
       class="overflow-hidden text-ellipsis whitespace-nowrap">Category1</span>
      <span class="arrow-down self-center" id="SELECT_FIRST_CHEVRON"></span>
     </label>
@@ -54,18 +53,17 @@
     </select>
     <!-- DROP DOWN MENU -->
     <div
-     class="absolute right-0 top-full z-10 mt-3 rounded-lg flex w-max flex-col gap-6 bg-white px-3 invisible sm:w-[350px] shadow-custom"
+     class="absolute right-0 top-full z-10 mt-3 rounded-lg flex w-max flex-col gap-6 bg-white px-3 invisible sm:w-[325px] shadow-custom"
      id="SELECT_FIRST_DROPDOWN">
      <span id="SELECT_FIRST_ARROW_UP"
       class="arrow-up absolute bottom-full right-[14px] border-[8px] border-b-white"></span>
      <!-- TABS -->
      <div class="flex w-full" id="SELECT_FIRST_TABS_CONTAINER">
-      <button type="button"
-       class="selected-tab flex-1 cursor-pointer select-none border-b-2 px-2 pb-1 pt-3 text-center text-black"
+      <button type="button" class="selected-tab flex-1 cursor-pointer select-none border-b-2 px-2 pb-1 pt-3 text-center"
        id="SELECT_FIRST_CATEGORY1_TAB" data-controls="SELECT_FIRST_CATEGORY1_OPTIONS">
        Category1
       </button>
-      <button type="button" class="flex-1 cursor-pointer select-none border-b-2 px-2 pb-1 pt-3 text-center text-black"
+      <button type="button" class="flex-1 cursor-pointer select-none border-b-2 px-2 pb-1 pt-3 text-center"
        id="SELECT_FIRST_CATEGORY2_TAB" data-controls="SELECT_SECOND_CATEGORY2_OPTIONS">
        Category2
       </button>
@@ -74,19 +72,19 @@
      <div id="SELECT_FIRST_TAB_OPTIONS_CONTAINER">
       <div class="grid gap-2 sm:grid-cols-2" id="SELECT_FIRST_CATEGORY1_OPTIONS">
        <span
-        class="col-span-1 cursor-pointer select-none rounded-md rounded-l-full rounded-r-full border px-2 py-1 text-center text-sm text-black hover:bg-slate-100"
+        class="col-span-1 cursor-pointer select-none rounded-md rounded-l-full rounded-r-full border px-2 py-1 text-center text-sm hover:bg-gray-100"
         id="SELECT_FIRST_TAB1OPTION1_LABEL">Tab1Option1</span>
        <span
-        class="col-span-1 cursor-pointer select-none rounded-l-full rounded-r-full border px-2 py-1 text-center text-sm text-black hover:bg-slate-100"
+        class="col-span-1 cursor-pointer select-none rounded-l-full rounded-r-full border px-2 py-1 text-center text-sm hover:bg-gray-100"
         id="SELECT_FIRST_TAB1OPTION2_LABEL">Tab1Option2</span>
       </div>
       <!-- TAB 2 CONTENT -->
       <div class="grid gap-2 sm:grid-cols-2" id="SELECT_SECOND_CATEGORY2_OPTIONS">
        <span
-        class="col-span-1 cursor-pointer select-none rounded-l-full rounded-r-full border px-2 py-1 text-center text-sm text-black hover:bg-slate-100"
+        class="col-span-1 cursor-pointer select-none rounded-l-full rounded-r-full border px-2 py-1 text-center text-sm hover:bg-gray-100"
         id="SELECT_FIRST_TAB2OPTION1_LABEL">Tab2Option1</span>
        <span
-        class="col-span-1 cursor-pointer select-none rounded-l-full rounded-r-full border px-2 py-1 text-center text-sm text-black hover:bg-slate-100"
+        class="col-span-1 cursor-pointer select-none rounded-l-full rounded-r-full border px-2 py-1 text-center text-sm hover:bg-gray-100"
         id="SELECT_FIRST_TAB2OPTION2_LABEL">Tab2Option2</span>
       </div>
      </div>
@@ -110,8 +108,8 @@
    <div id="SELECT_SECOND_CONTAINER" class="relative w-7 min-w-32 flex-grow cursor-pointer sm:min-w-0">
     <input type="checkbox" id="SELECT_SECOND_TOGGLER" class="hidden" />
     <label for="SELECT_SECOND_TOGGLER" id="SELECT_SECOND_LABEL"
-     class="flex cursor-pointer select-none justify-between rounded-md bg-white px-4 py-3 text-black"><span
-      class="overflow-hidden text-ellipsis whitespace-nowrap">Category1</span>
+     class="flex cursor-pointer select-none justify-between rounded-md bg-white px-4 py-3"><span
+      class="overflow-hidden text-ellipsis whitespace-nowrap">Beds & Baths</span>
      <span class="arrow-down self-center" id="SELECT_SECOND_CHEVRON"></span>
     </label>
     <select name="SELECT_SECOND" id="SELECT_SECOND" class="invisible absolute h-0 w-0">
@@ -123,42 +121,49 @@
     </select>
     <!-- DROP DOWN MENU -->
     <div
-     class="absolute right-0 top-full z-10 mt-3 rounded-lg flex w-max flex-col gap-6 bg-white px-3 invisible sm:w-[350px] shadow-custom"
+     class="absolute right-0 top-full z-10 mt-3 rounded-lg flex w-max flex-col gap-6 bg-white p-3 invisible sm:w-[325px] shadow-custom"
      id="SELECT_SECOND_DROPDOWN">
      <span id="SELECT_SECOND_ARROW_UP"
       class="arrow-up absolute bottom-full right-[14px] border-[8px] border-b-white"></span>
-     <!-- TABS -->
-     <div class="flex w-full" id="SELECT_SECOND_TABS_CONTAINER">
-      <button type="button"
-       class="selected-tab flex-1 cursor-pointer select-none border-b-2 px-2 pb-1 pt-3 text-center text-black"
-       id="SELECT_SECOND_CATEGORY1_TAB" data-controls="SELECT_SECOND_CATEGORY1_OPTIONS">
-       Category1
-      </button>
-      <button type="button" class="flex-1 cursor-pointer select-none border-b-2 px-2 pb-1 pt-3 text-center text-black"
-       id="SELECT_SECOND_CATEGORY2_TAB" data-controls="SELECT_SECOND_CATEGORY2_OPTIONS">
-       Category2
-      </button>
-     </div>
-     <!-- TAB 1 CONTENT -->
-     <div id="SELECT_SECOND_TAB_OPTIONS_CONTAINER">
-      <div class="grid gap-2 sm:grid-cols-2" id="SELECT_SECOND_CATEGORY1_OPTIONS">
-       <span
-        class="col-span-1 cursor-pointer select-none rounded-md rounded-l-full rounded-r-full border px-2 py-1 text-center text-sm text-black hover:bg-slate-100"
-        id="SELECT_SECOND_TAB1OPTION1_LABEL">Tab1Option1</span>
-       <span
-        class="col-span-1 cursor-pointer select-none rounded-l-full rounded-r-full border px-2 py-1 text-center text-sm text-black hover:bg-slate-100"
-        id="SELECT_SECOND_TAB1OPTION2_LABEL">Tab1Option2</span>
-      </div>
-      <!-- TAB 2 CONTENT -->
-      <div class="grid gap-2 sm:grid-cols-2" id="SELECT_SECOND_CATEGORY2_OPTIONS">
-       <span
-        class="col-span-1 cursor-pointer select-none rounded-l-full rounded-r-full border px-2 py-1 text-center text-sm text-black hover:bg-slate-100"
-        id="SELECT_SECOND_TAB2OPTION1_LABEL">Tab2Option1</span>
-       <span
-        class="col-span-1 cursor-pointer select-none rounded-l-full rounded-r-full border px-2 py-1 text-center text-sm text-black hover:bg-slate-100"
-        id="SELECT_SECOND_TAB2OPTION2_LABEL">Tab2Option2</span>
+     <!-- CHECKBOXES / OPTIONS -->
+     <div id="BEDS_OPTIONS_CONTAINER">
+      <h2 class="mb-3">Beds</h2>
+      <input type="checkbox" name="" id="studio" class="hidden">
+      <input type="checkbox" name="" id="8+" class="hidden">
+      <input type="checkbox" name="" id="" class="hidden">
+      <input type="checkbox" name="" id="" class="hidden">
+      <input type="checkbox" name="" id="" class="hidden">
+      <input type="checkbox" name="" id="" class="hidden">
+      <div class="flex flex-wrap gap-2">
+       <label
+        class="cursor-pointer select-none rounded-md rounded-l-full rounded-r-full border px-4 py-1 text-center text-sm hover:bg-gray-100"
+        id="" for="studio">Studio</label>
+       <label
+        class="cursor-pointer select-none rounded-md rounded-l-full rounded-r-full border px-4 py-1 text-center text-sm hover:bg-gray-100"
+        id="" for="studio">1</label>
+       <label
+        class="cursor-pointer select-none rounded-md rounded-l-full rounded-r-full border px-4 py-1 text-center text-sm hover:bg-gray-100"
+        id="" for="8+">8+</label>
       </div>
      </div>
+     <div id="BATHS_OPTIONS_CONTAINER">
+      <h2 class="mb-3">Baths</h2>
+      <input type="checkbox" name="" id="1" class="hidden">
+      <input type="checkbox" name="" id="6+" class="hidden">
+      <input type="checkbox" name="" id="" class="hidden">
+      <input type="checkbox" name="" id="" class="hidden">
+      <input type="checkbox" name="" id="" class="hidden">
+      <input type="checkbox" name="" id="" class="hidden">
+      <div class="flex flex-wrap gap-2">
+       <label
+        class="cursor-pointer select-none rounded-md rounded-l-full rounded-r-full border px-4 py-1 text-center text-sm hover:bg-gray-100"
+        id="" for="1">1</label>
+       <label
+        class="cursor-pointer select-none rounded-md rounded-l-full rounded-r-full border px-4 py-1 text-center text-sm hover:bg-gray-100"
+        id="" for="6+">6+</label>
+      </div>
+     </div>
+     <!-- END OF CHECKBOXES / OPTIONS -->
      <div class="SELECT_SECOND_DD_BUTTON_CONTAINER flex flex-grow gap-2">
       <button type="button" class="inline-block flex-grow border border-teal-900 p-1 text-teal-900 rounded-md"
        id="SELECT_SECOND_DD_RESET_BUTTON">
@@ -179,8 +184,8 @@
    <div id="SELECT_THIRD_CONTAINER" class="relative w-7 min-w-32 flex-grow cursor-pointer sm:min-w-0">
     <input type="checkbox" id="SELECT_THIRD_TOGGLER" class="hidden" />
     <label for="SELECT_THIRD_TOGGLER" id="SELECT_THIRD_LABEL"
-     class="flex cursor-pointer select-none justify-between rounded-md bg-white px-4 py-3 text-black"><span
-      class="overflow-hidden text-ellipsis whitespace-nowrap">Category1</span>
+     class="flex cursor-pointer select-none justify-between rounded-md bg-white px-4 py-3"><span
+      class="overflow-hidden text-ellipsis whitespace-nowrap">Price (AED)</span>
      <span class="arrow-down self-center" id="SELECT_THIRD_CHEVRON"></span>
     </label>
     <select name="SELECT_THIRD" id="SELECT_THIRD" class="invisible absolute h-0 w-0">
@@ -192,48 +197,27 @@
     </select>
     <!-- DROP DOWN MENU -->
     <div
-     class="absolute right-0 top-full z-10 mt-3 rounded-lg flex w-max flex-col gap-6 bg-white px-3 invisible sm:w-[350px] shadow-custom"
+     class="absolute right-0 top-full z-10 mt-3 rounded-lg flex w-max flex-col gap-6 bg-white p-3 invisible sm:w-[325px] shadow-custom"
      id="SELECT_THIRD_DROPDOWN">
      <span id="SELECT_THIRD_ARROW_UP"
       class="arrow-up absolute bottom-full right-[14px] border-[8px] border-b-white"></span>
-     <!-- TABS -->
-     <div class="flex w-full" id="SELECT_THIRD_TABS_CONTAINER">
-      <button type="button"
-       class="selected-tab flex-1 cursor-pointer select-none border-b-2 px-2 pb-1 pt-3 text-center text-black"
-       id="SELECT_THIRD_CATEGORY1_TAB" data-controls="SELECT_THIRD_CATEGORY1_OPTIONS">
-       Category1
-      </button>
-      <button type="button" class="flex-1 cursor-pointer select-none border-b-2 px-2 pb-1 pt-3 text-center text-black"
-       id="SELECT_THIRD_CATEGORY2_TAB" data-controls="SELECT_THIRD_CATEGORY2_OPTIONS">
-       Category2
-      </button>
-     </div>
-     <!-- TAB 1 CONTENT -->
-     <div id="SELECT_THIRD_TAB_OPTIONS_CONTAINER">
-      <div class="grid gap-2 sm:grid-cols-2" id="SELECT_THIRD_CATEGORY1_OPTIONS">
-       <span
-        class="col-span-1 cursor-pointer select-none rounded-md rounded-l-full rounded-r-full border px-2 py-1 text-center text-sm text-black hover:bg-slate-100"
-        id="SELECT_THIRD_TAB1OPTION1_LABEL">Tab1Option1</span>
-       <span
-        class="col-span-1 cursor-pointer select-none rounded-l-full rounded-r-full border px-2 py-1 text-center text-sm text-black hover:bg-slate-100"
-        id="SELECT_THIRD_TAB1OPTION2_LABEL">Tab1Option2</span>
+     <!-- RANGE SELECTOR -->
+     <div class="flex gap-2" id="PRICE_FILTER_CONTAINER">
+      <div id="MINIMUM_FIELD_CONTAINER" class="relative">
+       <label for="minimum" class="block mb-2 text-sm text-gray-400 select-none w-fit">Minimum</label>
+       <input type="number" placeholder="0" step="500" min="0" name="" id="minimum" class="rounded-lg border px-3 py-2 focus:border focus:border-teal-900 focus:outline-none w-full">
       </div>
-      <!-- TAB 2 CONTENT -->
-      <div class="grid gap-2 sm:grid-cols-2" id="SELECT_THIRD_CATEGORY2_OPTIONS">
-       <span
-        class="col-span-1 cursor-pointer select-none rounded-l-full rounded-r-full border px-2 py-1 text-center text-sm text-black hover:bg-slate-100"
-        id="SELECT_THIRD_TAB2OPTION1_LABEL">Tab2Option1</span>
-       <span
-        class="col-span-1 cursor-pointer select-none rounded-l-full rounded-r-full border px-2 py-1 text-center text-sm text-black hover:bg-slate-100"
-        id="SELECT_THIRD_TAB2OPTION2_LABEL">Tab2Option2</span>
+      <div id="MAXIMUM_FIELD_CONTAINER" class="relative">
+       <label for="maximum" class="block mb-2 text-sm text-gray-400 select-none w-fit">Maximum</label>
+       <input type="number" placeholder="Any" step="500" name="" id="maximum" class="rounded-lg border px-3 py-2 focus:border focus:border-teal-900 focus:outline-none w-full">
       </div>
      </div>
      <div class="SELECT_THIRD_DD_BUTTON_CONTAINER flex flex-grow gap-2">
-      <button type="button" class="inline-block flex-grow border border-teal-900 p-1 text-teal-900 rounded-md"
+      <button type="button" class="inline-block basis-1/2 border border-teal-900 p-1 text-teal-900 rounded-md"
        id="SELECT_THIRD_DD_RESET_BUTTON">
        Reset
       </button>
-      <button type="button" class="inline-block flex-grow bg-teal-900 p-1 text-white rounded-md"
+      <button type="button" class="inline-block basis-1/2 bg-teal-900 p-1 text-white rounded-md"
        id="SELECT_THIRD_DD_DONE_BUTTON">
        Done
       </button>
@@ -244,9 +228,9 @@
 
   </div>
   <!-- FIND BUTTON -->
-  <button class="rounded-md bg-green-600 px-2 py-3 sm:col-start-9 sm:col-end-13">Find</button>
+  <button class="rounded-md bg-green-600 px-2 py-3 sm:col-start-9 sm:col-end-13 text-white">Find</button>
   <!-- ROW THIRD -->
-  <a class="bg-haver rounded-md px-2 py-3 sm:col-span-12" href="">Search 2.0</a>
+  <a class="bg-haver rounded-md px-2 py-3 sm:col-span-12 text-white" href="">Search 2.0</a>
  </form>
 
  <script src="./script.js"></script>

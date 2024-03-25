@@ -1,5 +1,12 @@
 "use strict";
 
+// const FILTER_FORM = document.getElementById("filter-form");
+
+// FILTER_FORM.onsubmit = (e) => {
+//  e.preventDefault();
+//  console.log(e);
+// }
+
 // RADIO BUTTONS
 
 const RADIO_BUTTONS_CONTAINER = document.getElementById("RADIO_BUTTONS_CONTAINER");
@@ -53,7 +60,7 @@ SELECT_FIRST.options[0].selected = true; // to reset the value of select to empt
 
 SELECT_FIRST_DROPDOWN.addEventListener("click", (e) => {
  if (e.target.closest("#SELECT_FIRST_TAB_OPTIONS_CONTAINER") && e.target.tagName === "SPAN") {
-  SELECT_FIRST_TOGGLER.checked = false;
+  // SELECT_FIRST_TOGGLER.checked = false;
   SELECT_FIRST_LABEL.childNodes[0].textContent = e.target.textContent;
   for (let option of SELECT_FIRST.options) {
    if (option.textContent === e.target.textContent) option.selected = true;
@@ -71,7 +78,7 @@ SELECT_FIRST_DROPDOWN.addEventListener("click", (e) => {
  if (e.target.id === "SELECT_FIRST_DD_RESET_BUTTON") {
   SELECT_FIRST.value = null;
   SELECT_FIRST_LABEL.childNodes[0].textContent = "Category1";
-  SELECT_FIRST_TOGGLER.checked = false;
+  // SELECT_FIRST_TOGGLER.checked = false;
 
   for (let options of SELECT_FIRST_TAB_OPTIONS_CONTAINER.children) {
    for (let option of options.children) {
@@ -84,7 +91,7 @@ SELECT_FIRST_DROPDOWN.addEventListener("click", (e) => {
 });
 
 document.addEventListener("click", (e) => {
- console.log(SELECT_FIRST.value);
+ // console.log(SELECT_FIRST.value);
  if (!e.target.closest("#SELECT_FIRST_CONTAINER")) SELECT_FIRST_TOGGLER.checked = false;
 
  if (SELECT_FIRST_TOGGLER.checked) {
@@ -108,15 +115,15 @@ function flipDropDown() {
  if (coords.left < 5) {
   SELECT_FIRST_DROPDOWN.classList.remove("right-0");
   SELECT_FIRST_DROPDOWN.classList.add("left-0");
- 
+
   SELECT_FIRST_ARROW_UP.classList.remove("right-[14px]");
   SELECT_FIRST_ARROW_UP.classList.add("left-[14px]");
  }
- 
+
  if (SELECT_FIRST_LABEL.getBoundingClientRect().right > SELECT_FIRST_DROPDOWN.offsetWidth + 5) {
   SELECT_FIRST_DROPDOWN.classList.remove("left-0");
   SELECT_FIRST_DROPDOWN.classList.add("right-0");
- 
+
   SELECT_FIRST_ARROW_UP.classList.remove("left-[14px]");
   SELECT_FIRST_ARROW_UP.classList.add("right-[14px]");
  }
@@ -126,4 +133,176 @@ flipDropDown();
 
 window.addEventListener("resize", function (e) {
  flipDropDown();
+});
+
+// 
+
+
+
+
+
+
+
+// DD TABS LOGIC ENDS HERE
+
+const SELECT_SECOND_TOGGLER = document.getElementById("SELECT_SECOND_TOGGLER");
+const SELECT_SECOND_LABEL = document.getElementById("SELECT_SECOND_LABEL");
+const SELECT_SECOND_CHEVRON = document.getElementById("SELECT_SECOND_CHEVRON");
+const SELECT_SECOND_ARROW_UP = document.getElementById("SELECT_SECOND_ARROW_UP");
+const SELECT_SECOND_DROPDOWN = document.getElementById("SELECT_SECOND_DROPDOWN");
+
+SELECT_SECOND_DROPDOWN.addEventListener("click", (e) => {
+ if ((e.target.closest("#BEDS_OPTIONS_CONTAINER") || e.target.closest("#BATHS_OPTIONS_CONTAINER")) && e.target.tagName === "LABEL") {
+  e.target.classList.toggle("checked-option");
+  e.target.classList.toggle("hover:bg-gray-100");
+
+
+  if (SELECT_SECOND_DROPDOWN.querySelectorAll(".checked-option").length) {
+   const beds = [], baths = [];
+   SELECT_SECOND_LABEL.childNodes[0].textContent = "";
+   for (let node of BEDS_OPTIONS_CONTAINER.querySelectorAll(".checked-option")) {
+    beds.push(node.textContent);
+   }
+   for (let node of BATHS_OPTIONS_CONTAINER.querySelectorAll(".checked-option")) {
+    baths.push(node.textContent);
+   }
+
+   let numberOfBeds = beds.map(item => parseInt(item)).filter(item => !isNaN(item)).reduce((total, num) => total + num, 0);
+   let numberOfBaths = baths.map(item => parseInt(item)).filter(item => !isNaN(item)).reduce((total, num) => total + num, 0);
+
+   const bedsString = beds.join(", ") + (numberOfBeds ? (numberOfBeds === 1 ? " Bed" : " Beds") : "");
+   const bathsString = baths.join(", ") + (numberOfBaths ? (numberOfBaths === 1 ? " Bath" : " Baths") : "");
+
+   SELECT_SECOND_LABEL.childNodes[0].textContent = bedsString + ((!bedsString.length || !bathsString.length) ? "" : " / ") + bathsString;
+
+  } else {
+   SELECT_SECOND_LABEL.childNodes[0].textContent = "Beds & Baths";
+  }
+ }
+
+ if (e.target.id === "SELECT_SECOND_DD_DONE_BUTTON") SELECT_SECOND_TOGGLER.checked = false;
+ if (e.target.id === "SELECT_SECOND_DD_RESET_BUTTON") {
+  SELECT_SECOND_LABEL.childNodes[0].textContent = "Beds & Baths";
+
+  for (let selected of SELECT_SECOND_DROPDOWN.querySelectorAll(".checked-option")) {
+   selected.click();
+  }
+ }
+});
+
+document.addEventListener("click", (e) => {
+ if (!e.target.closest("#SELECT_SECOND_CONTAINER")) SELECT_SECOND_TOGGLER.checked = false;
+
+ if (SELECT_SECOND_TOGGLER.checked) {
+  SELECT_SECOND_DROPDOWN.classList.remove("invisible");
+  SELECT_SECOND_DROPDOWN.style.paddingBottom = "12px";
+  // SELECT_SECOND_DROPDOWN.style.maxHeight = height + "px";
+  // SELECT_SECOND_DROPDOWN.style.width = width + "px";
+  SELECT_SECOND_CHEVRON.style.transform = "rotate(180deg)";
+ } else {
+  SELECT_SECOND_DROPDOWN.classList.add("invisible");
+  // SELECT_SECOND_DROPDOWN.style.paddingBottom = "";
+  // SELECT_SECOND_DROPDOWN.style.maxHeight = 0;
+  SELECT_SECOND_CHEVRON.style.transform = "rotateY(360deg)";
+ }
+});
+
+// 
+
+
+
+
+
+
+
+
+
+// DD TABS LOGIC ENDS HERE
+
+const SELECT_THIRD_TOGGLER = document.getElementById("SELECT_THIRD_TOGGLER");
+const SELECT_THIRD_LABEL = document.getElementById("SELECT_THIRD_LABEL");
+const SELECT_THIRD_CHEVRON = document.getElementById("SELECT_THIRD_CHEVRON");
+const SELECT_THIRD_ARROW_UP = document.getElementById("SELECT_THIRD_ARROW_UP");
+const SELECT_THIRD_DROPDOWN = document.getElementById("SELECT_THIRD_DROPDOWN");
+
+const PRICE_FILTER_CONTAINER = document.getElementById("PRICE_FILTER_CONTAINER");
+const MINIMUM_FIELD = document.getElementById("minimum");
+const MAXIMUM_FIELD = document.getElementById("maximum");
+const MINIMUM_FIELD_CONTAINER = document.getElementById("MINIMUM_FIELD_CONTAINER");
+const MAXIMUM_FIELD_CONTAINER = document.getElementById("MAXIMUM_FIELD_CONTAINER");
+
+const options = ["10,000", "20,000", "30,000", "40,000", "50,000", "60,000"];
+let nestedDropdown = document.createElement("div");
+
+for (let i = 0; i < options.length; i++) {
+ nestedDropdown.classList.add("nested-dropdown-style");
+ let span = document.createElement("span");
+ span.classList.add("p-3", "text-center");
+ span.textContent = options[i];
+ nestedDropdown.append(span);
+}
+
+MINIMUM_FIELD.addEventListener("focus", (e) => {
+ MINIMUM_FIELD_CONTAINER.append(nestedDropdown);
+});
+
+MAXIMUM_FIELD.addEventListener("focus", (e) => {
+ MAXIMUM_FIELD_CONTAINER.append(nestedDropdown);
+});
+
+SELECT_THIRD_DROPDOWN.addEventListener("click", (e) => {
+ if (e.target.closest("#SELECT_THIRD_CONTAINER") && e.target.tagName !== "INPUT") {
+  nestedDropdown.remove();
+ }
+
+ if (e.target.id === "SELECT_THIRD_DD_DONE_BUTTON") SELECT_THIRD_TOGGLER.checked = false;
+ if (e.target.id === "SELECT_THIRD_DD_RESET_BUTTON") {
+  SELECT_THIRD_LABEL.childNodes[0].textContent = "Price (AED)";
+  MINIMUM_FIELD.value = "";
+  MAXIMUM_FIELD.value = "";
+  // SELECT_THIRD_TOGGLER.checked = false;
+ }
+});
+
+PRICE_FILTER_CONTAINER.addEventListener("click", (e) => {
+ if (e.target.tagName !== "SPAN") return;
+
+ for (let option of nestedDropdown.children) {
+  option.classList.remove("selected-amount");
+ }
+
+ e.target.classList.add("selected-amount");
+ if (MINIMUM_FIELD.value < 0) MINIMUM_FIELD.value = 0;
+ e.target.parentElement.previousElementSibling.value = +e.target.textContent.replace(/\D*/g, "");
+ e.target.parentElement.previousElementSibling.dispatchEvent(new Event('change', { bubbles: true }));
+ nestedDropdown.remove();
+});
+
+PRICE_FILTER_CONTAINER.addEventListener("change", (e) => {
+ if (+MINIMUM_FIELD.value > +MAXIMUM_FIELD.value) MAXIMUM_FIELD.value = MINIMUM_FIELD.value;
+ MAXIMUM_FIELD.setAttribute("min", MINIMUM_FIELD.value);
+ let minAmount = (MINIMUM_FIELD.value / 1000) + "K";
+ let maxAmount = parseInt(MAXIMUM_FIELD.value) === 0 ? "Any" : (MAXIMUM_FIELD.value / 1000) + "K";
+ SELECT_THIRD_LABEL.childNodes[0].textContent = `AED ${minAmount} - ${maxAmount}`;
+})
+
+document.addEventListener("click", (e) => {
+ console.log(`Range ${MINIMUM_FIELD.value} - ${MAXIMUM_FIELD.value}`);
+ if (!e.target.closest("#SELECT_THIRD_CONTAINER") && !e.target.closest(".nested-dropdown-style")) {
+  SELECT_THIRD_TOGGLER.checked = false;
+  nestedDropdown.remove();
+ }
+
+ if (SELECT_THIRD_TOGGLER.checked) {
+  SELECT_THIRD_DROPDOWN.classList.remove("invisible");
+  SELECT_THIRD_DROPDOWN.style.paddingBottom = "12px";
+  // SELECT_THIRD_DROPDOWN.style.maxHeight = height + "px";
+  // SELECT_THIRD_DROPDOWN.style.width = width + "px";
+  SELECT_THIRD_CHEVRON.style.transform = "rotate(180deg)";
+ } else {
+  SELECT_THIRD_DROPDOWN.classList.add("invisible");
+  // SELECT_THIRD_DROPDOWN.style.paddingBottom = "";
+  // SELECT_THIRD_DROPDOWN.style.maxHeight = 0;
+  SELECT_THIRD_CHEVRON.style.transform = "rotateY(360deg)";
+ }
 });

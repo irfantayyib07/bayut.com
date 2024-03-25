@@ -23,7 +23,23 @@
 }
 
 .selected-option {
- @apply border-green-600 bg-green-50 font-semibold text-green-600;
+ @apply border-green-600 bg-green-50 text-green-600;
+}
+
+.selected-amount {
+ @apply bg-green-50 text-green-600;
+}
+
+.shadow-custom {
+ box-shadow: 0 0 8px -3px black;
+}
+
+.checked-option {
+ @apply border-green-600 bg-green-50 text-green-600;
+}
+
+.nested-dropdown-style {
+ @apply absolute left-0 right-0 top-full z-10 mt-3 rounded-lg flex flex-col bg-white shadow-custom max-h-60 overflow-scroll overflow-x-hidden;
 }
 
 /* #SELECT_FIRST_CONTAINER {
@@ -47,7 +63,3 @@
 #SELECT_FIRST_CHEVRON {
  transition: .4s linear;
 } */
-
-.shadow-custom {
- box-shadow: 0 0 8px -3px black;
-}
