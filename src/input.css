@@ -2,12 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-.tw-bg-haver {
- background-image: url("../assets/JPEG 1280x720 (5).jpeg");
-}
-
 .tw-checked-radio-label {
- @apply tw-bg-green-50 tw-font-semibold tw-text-green-600;
+ @apply tw-bg-green-50 tw-text-green-600;
 }
 
 .tw-arrow-down {
@@ -24,10 +20,6 @@
 
 .tw-selected-option {
  @apply tw-border-green-600 tw-bg-green-50 tw-text-green-600;
-}
-
-.tw-selected-amount {
- @apply tw-bg-green-50 tw-text-green-600;
 }
 
 .tw-shadow-custom {

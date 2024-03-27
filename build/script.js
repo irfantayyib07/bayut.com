@@ -146,7 +146,7 @@ SELECT_SECOND_DROPDOWN.addEventListener("click", (e) => {
  }
 });
 
-// SELECT_FIRST DD (DROPDOWN)
+// SELECT_THIRD DD (DROPDOWN)
 
 const SELECT_THIRD_TOGGLER = document.getElementById("SELECT_THIRD_TOGGLER");
 const SELECT_THIRD_LABEL = document.getElementById("SELECT_THIRD_LABEL");
@@ -257,7 +257,7 @@ document.addEventListener("click", (e) => {
  }
 
  console.log(`Range ${MINIMUM_FIELD.value} - ${MAXIMUM_FIELD.value}`);
- if (!e.target.closest("#SELECT_THIRD_CONTAINER") && !e.target.closest(".nested-dropdown-style")) {
+ if (!e.target.closest("#SELECT_THIRD_CONTAINER") && !e.target.closest(".tw-nested-dropdown-style")) {
   SELECT_THIRD_TOGGLER.checked = false;
   nestedDropdown.remove();
  }
