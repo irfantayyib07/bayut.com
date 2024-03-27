@@ -2,44 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
-.bg-haver {
+.tw-bg-haver {
  background-image: url("../assets/JPEG 1280x720 (5).jpeg");
 }
 
-.checked-radio-label {
- @apply bg-green-50 font-semibold text-green-600;
+.tw-checked-radio-label {
+ @apply tw-bg-green-50 tw-font-semibold tw-text-green-600;
 }
 
-.arrow-down {
- @apply h-0 w-0 border-[6px] border-b-0 border-x-transparent border-t-gray-400;
+.tw-arrow-down {
+ @apply tw-h-0 tw-w-0 tw-border-[6px] tw-border-b-0 tw-border-x-transparent tw-border-t-gray-400;
 }
 
-.arrow-up {
- @apply h-0 w-0 border-t-0 border-x-transparent;
+.tw-arrow-up {
+ @apply tw-h-0 tw-w-0 tw-border-t-0 tw-border-x-transparent;
 }
 
-.selected-tab {
- @apply border-b-green-600 text-green-600;
+.tw-selected-tab {
+ @apply tw-border-b-green-600 tw-text-green-600;
 }
 
-.selected-option {
- @apply border-green-600 bg-green-50 text-green-600;
+.tw-selected-option {
+ @apply tw-border-green-600 tw-bg-green-50 tw-text-green-600;
 }
 
-.selected-amount {
- @apply bg-green-50 text-green-600;
+.tw-selected-amount {
+ @apply tw-bg-green-50 tw-text-green-600;
 }
 
-.shadow-custom {
+.tw-shadow-custom {
  box-shadow: 0 0 8px -3px black;
 }
 
-.checked-option {
- @apply border-green-600 bg-green-50 text-green-600;
+.tw-checked-option {
+ @apply tw-border-green-600 tw-bg-green-50 tw-text-green-600;
 }
 
-.nested-dropdown-style {
- @apply shadow-custom absolute left-full top-0 z-10 flex max-h-60 flex-col overflow-scroll overflow-x-hidden rounded-lg bg-white px-3;
+.tw-nested-dropdown-style {
+ @apply tw-shadow-custom tw-absolute tw-left-full tw-top-0 tw-z-10 tw-flex tw-max-h-60 tw-flex-col tw-overflow-scroll tw-overflow-x-hidden tw-rounded-lg tw-bg-white tw-px-3;
 }
 
 /* #SELECT_FIRST_CONTAINER {

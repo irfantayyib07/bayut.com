@@ -13,8 +13,8 @@ const RADIO_BUTTONS_CONTAINER = document.getElementById("RADIO_BUTTONS_CONTAINER
 
 RADIO_BUTTONS_CONTAINER.addEventListener("click", (e) => {
  if (e.target.tagName !== "LABEL") return;
- for (let elem of RADIO_BUTTONS_CONTAINER.children) elem.classList.remove("checked-radio-label");
- e.target.classList.add("checked-radio-label");
+ for (let elem of RADIO_BUTTONS_CONTAINER.children) elem.classList.remove("tw-checked-radio-label");
+ e.target.classList.add("tw-checked-radio-label");
 });
 
 // SELECT_FIRST DD (DROPDOWN)
@@ -26,14 +26,14 @@ const SELECT_FIRST_TAB_OPTIONS_CONTAINER = document.getElementById("SELECT_FIRST
 
 SELECT_FIRST_TABS_CONTAINER.addEventListener("click", (e) => {
  if (e.target.tagName !== "BUTTON") return;
- for (let elem of SELECT_FIRST_TABS_CONTAINER.children) elem.classList.remove("selected-tab");
- e.target.classList.add("selected-tab"); // add the "selected" style to the tab which is clicked
+ for (let elem of SELECT_FIRST_TABS_CONTAINER.children) elem.classList.remove("tw-selected-tab");
+ e.target.classList.add("tw-selected-tab"); // add the "selected" style to the tab which is clicked
 
  for (let elem of SELECT_FIRST_TAB_OPTIONS_CONTAINER.children) {
-  elem.classList.add("w-0", "h-0", "invisible", "absolute"); // remove all tab options
+  elem.classList.add("tw-w-0", "tw-h-0", "tw-invisible", "tw-absolute"); // remove all tab options
 
   if (elem.id === e.target.dataset.controls) {
-   elem.classList.remove("w-0", "h-0", "invisible", "absolute"); // show those options that match the tab which has been clicked
+   elem.classList.remove("tw-w-0", "tw-h-0", "tw-invisible", "tw-absolute"); // show those options that match the tab which has been clicked
   }
  }
 });
@@ -42,7 +42,7 @@ SELECT_FIRST_TABS_CONTAINER.addEventListener("click", (e) => {
 
 for (let elem of SELECT_FIRST_TAB_OPTIONS_CONTAINER.children) {
  if (elem.id !== SELECT_FIRST_TABS_CONTAINER.children["SELECT_FIRST_CATEGORY1_TAB"].dataset.controls)
-  elem.classList.add("w-0", "h-0", "invisible", "absolute");
+  elem.classList.add("tw-w-0", "tw-h-0", "tw-invisible", "tw-absolute");
 }
 
 // DD TABS LOGIC ENDS HERE
@@ -68,8 +68,8 @@ SELECT_FIRST_DROPDOWN.addEventListener("click", (e) => {
 
   for (let div of SELECT_FIRST_TAB_OPTIONS_CONTAINER.children) {
    for (let span of div.children) {
-    span.classList.remove("selected-option");
-    if (span === e.target) e.target.classList.add("selected-option");
+    span.classList.remove("tw-selected-option");
+    if (span === e.target) e.target.classList.add("tw-selected-option");
    }
   }
  }
@@ -82,7 +82,7 @@ SELECT_FIRST_DROPDOWN.addEventListener("click", (e) => {
 
   for (let options of SELECT_FIRST_TAB_OPTIONS_CONTAINER.children) {
    for (let option of options.children) {
-    option.classList.remove("selected-option");
+    option.classList.remove("tw-selected-option");
    }
   }
 
@@ -103,17 +103,17 @@ SELECT_SECOND_DROPDOWN.addEventListener("click", (e) => {
   (e.target.closest("#BEDS_OPTIONS_CONTAINER") || e.target.closest("#BATHS_OPTIONS_CONTAINER")) &&
   e.target.tagName === "LABEL"
  ) {
-  e.target.classList.toggle("checked-option");
-  e.target.classList.toggle("hover:bg-gray-100");
+  e.target.classList.toggle("tw-checked-option");
+  e.target.classList.toggle("hover:tw-bg-gray-100");
 
-  if (SELECT_SECOND_DROPDOWN.querySelectorAll(".checked-option").length) {
+  if (SELECT_SECOND_DROPDOWN.querySelectorAll(".tw-checked-option").length) {
    const beds = [],
     baths = [];
    SELECT_SECOND_LABEL.childNodes[0].textContent = "";
-   for (let node of BEDS_OPTIONS_CONTAINER.querySelectorAll(".checked-option")) {
+   for (let node of BEDS_OPTIONS_CONTAINER.querySelectorAll(".tw-checked-option")) {
     beds.push(node.textContent);
    }
-   for (let node of BATHS_OPTIONS_CONTAINER.querySelectorAll(".checked-option")) {
+   for (let node of BATHS_OPTIONS_CONTAINER.querySelectorAll(".tw-checked-option")) {
     baths.push(node.textContent);
    }
 
@@ -140,7 +140,7 @@ SELECT_SECOND_DROPDOWN.addEventListener("click", (e) => {
  if (e.target.id === "SELECT_SECOND_DD_RESET_BUTTON") {
   SELECT_SECOND_LABEL.childNodes[0].textContent = "Beds & Baths";
 
-  for (let selected of SELECT_SECOND_DROPDOWN.querySelectorAll(".checked-option")) {
+  for (let selected of SELECT_SECOND_DROPDOWN.querySelectorAll(".tw-checked-option")) {
    selected.click();
   }
  }
@@ -164,9 +164,9 @@ const options = ["10,000", "20,000", "30,000", "40,000", "50,000", "60,000"];
 let nestedDropdown = document.createElement("div");
 
 for (let i = 0; i < options.length; i++) {
- nestedDropdown.classList.add("nested-dropdown-style");
+ nestedDropdown.classList.add("tw-nested-dropdown-style");
  let span = document.createElement("span");
- span.classList.add("p-3", "text-center");
+ span.classList.add("tw-p-3", "tw-text-center");
  span.textContent = options[i];
  nestedDropdown.append(span);
 }
@@ -229,13 +229,13 @@ document.addEventListener("click", (e) => {
  if (!e.target.closest("#SELECT_FIRST_CONTAINER")) SELECT_FIRST_TOGGLER.checked = false;
 
  if (SELECT_FIRST_TOGGLER.checked) {
-  SELECT_FIRST_DROPDOWN.classList.remove("invisible");
+  SELECT_FIRST_DROPDOWN.classList.remove("tw-invisible");
   SELECT_FIRST_DROPDOWN.style.paddingBottom = "12px";
   // SELECT_FIRST_DROPDOWN.style.maxHeight = height + "px";
   // SELECT_FIRST_DROPDOWN.style.width = width + "px";
   SELECT_FIRST_CHEVRON.style.transform = "rotate(180deg)";
  } else {
-  SELECT_FIRST_DROPDOWN.classList.add("invisible");
+  SELECT_FIRST_DROPDOWN.classList.add("tw-invisible");
   // SELECT_FIRST_DROPDOWN.style.paddingBottom = "";
   // SELECT_FIRST_DROPDOWN.style.maxHeight = 0;
   SELECT_FIRST_CHEVRON.style.transform = "rotateY(360deg)";
@@ -244,13 +244,13 @@ document.addEventListener("click", (e) => {
  if (!e.target.closest("#SELECT_SECOND_CONTAINER")) SELECT_SECOND_TOGGLER.checked = false;
 
  if (SELECT_SECOND_TOGGLER.checked) {
-  SELECT_SECOND_DROPDOWN.classList.remove("invisible");
+  SELECT_SECOND_DROPDOWN.classList.remove("tw-invisible");
   SELECT_SECOND_DROPDOWN.style.paddingBottom = "12px";
   // SELECT_SECOND_DROPDOWN.style.maxHeight = height + "px";
   // SELECT_SECOND_DROPDOWN.style.width = width + "px";
   SELECT_SECOND_CHEVRON.style.transform = "rotate(180deg)";
  } else {
-  SELECT_SECOND_DROPDOWN.classList.add("invisible");
+  SELECT_SECOND_DROPDOWN.classList.add("tw-invisible");
   // SELECT_SECOND_DROPDOWN.style.paddingBottom = "";
   // SELECT_SECOND_DROPDOWN.style.maxHeight = 0;
   SELECT_SECOND_CHEVRON.style.transform = "rotateY(360deg)";
@@ -263,13 +263,13 @@ document.addEventListener("click", (e) => {
  }
 
  if (SELECT_THIRD_TOGGLER.checked) {
-  SELECT_THIRD_DROPDOWN.classList.remove("invisible");
+  SELECT_THIRD_DROPDOWN.classList.remove("tw-invisible");
   SELECT_THIRD_DROPDOWN.style.paddingBottom = "12px";
   // SELECT_THIRD_DROPDOWN.style.maxHeight = height + "px";
   // SELECT_THIRD_DROPDOWN.style.width = width + "px";
   SELECT_THIRD_CHEVRON.style.transform = "rotate(180deg)";
  } else {
-  SELECT_THIRD_DROPDOWN.classList.add("invisible");
+  SELECT_THIRD_DROPDOWN.classList.add("tw-invisible");
   // SELECT_THIRD_DROPDOWN.style.paddingBottom = "";
   // SELECT_THIRD_DROPDOWN.style.maxHeight = 0;
   SELECT_THIRD_CHEVRON.style.transform = "rotateY(360deg)";
@@ -281,25 +281,25 @@ document.addEventListener("click", (e) => {
 function flipDropDown(dropdown) {
  let coords = dropdown.getBoundingClientRect();
  if (coords.left < 5) {
-  dropdown.classList.remove("right-0");
-  dropdown.classList.add("left-0");
+  dropdown.classList.remove("tw-right-0");
+  dropdown.classList.add("tw-left-0");
 
-  dropdown.querySelector(".arrow-up").classList.remove("right-[14px]");
-  dropdown.querySelector(".arrow-up").classList.add("left-[14px]");
+  dropdown.querySelector(".tw-arrow-up").classList.remove("tw-right-[14px]");
+  dropdown.querySelector(".tw-arrow-up").classList.add("tw-left-[14px]");
  }
  if (dropdown.parentElement.querySelector("label").getBoundingClientRect().right > dropdown.offsetWidth + 5) {
-  dropdown.classList.remove("left-0");
-  dropdown.classList.add("right-0");
+  dropdown.classList.remove("tw-left-0");
+  dropdown.classList.add("tw-right-0");
 
-  dropdown.querySelector(".arrow-up").classList.remove("left-[14px]");
-  dropdown.querySelector(".arrow-up").classList.add("right-[14px]");
+  dropdown.querySelector(".tw-arrow-up").classList.remove("tw-left-[14px]");
+  dropdown.querySelector(".tw-arrow-up").classList.add("tw-right-[14px]");
  }
 }
 
-for (let dropdown of document.querySelectorAll(".dropdown")) {
+for (let dropdown of document.querySelectorAll(".tw-dropdown")) {
  flipDropDown(dropdown);
 }
 
 window.addEventListener("resize", function (e) {
- flipDropDown(document.querySelector(".dropdown:not(.invisible)"));
+ flipDropDown(document.querySelector(".tw-dropdown:not(.tw-invisible)"));
 });

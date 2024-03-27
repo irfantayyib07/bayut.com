@@ -7,20 +7,20 @@
   <title>Document</title>
  </head>
 
- <body class="flex min-h-screen w-screen items-center justify-center bg-yellow-950">
+ <body class="tw-flex tw-min-h-screen tw-w-screen tw-items-center tw-justify-center tw-bg-yellow-950">
   <form
    id="filter-form"
-   class="grid basis-3/4 grid-cols-1 gap-3 rounded-md bg-black bg-opacity-50 p-4 sm:min-w-[560px] sm:grid-cols-12"
+   class="tw-grid tw-basis-3/4 tw-grid-cols-1 tw-gap-3 tw-rounded-md tw-bg-black tw-bg-opacity-50 tw-p-4 sm:tw-min-w-[560px] sm:tw-grid-cols-12"
    novalidate
   >
    <!-- ROW FIRST -->
    <!-- LOCATION SEARCH BAR (COLUMN FIRST) -->
-   <div class="flex sm:col-span-8">
-    <label class="flex cursor-pointer rounded-bl-md rounded-tl-md bg-white p-3" for="location"
-     ><img src="./assets/location.svg" alt="location" class="w-6 self-center"
+   <div class="tw-flex sm:tw-col-span-8">
+    <label class="tw-flex tw-cursor-pointer tw-rounded-bl-md tw-rounded-tl-md tw-bg-white tw-p-3" for="location"
+     ><img src="./assets/location.svg" alt="location" class="tw-w-6 tw-self-center"
     /></label>
     <input
-     class="w-full rounded-md rounded-bl-none rounded-tl-none px-2 py-3 focus:outline-none"
+     class="tw-w-full tw-rounded-md tw-rounded-bl-none tw-rounded-tl-none tw-px-2 tw-py-3 focus:tw-outline-none"
      type="text"
      id="location"
      placeholder="Enter Location"
@@ -28,45 +28,45 @@
    </div>
    <!-- RADIO BUTTONS (RENT, BUY, OFFPLAN) (COLUMN SECOND) -->
    <div
-    class="flex flex-wrap rounded-md bg-white p-1 sm:col-start-9 sm:col-end-13"
+    class="tw-flex tw-flex-wrap tw-rounded-md tw-bg-white tw-p-1 sm:tw-col-start-9 sm:tw-col-end-13"
     id="RADIO_BUTTONS_CONTAINER"
    >
-    <input class="invisible absolute h-0 w-0" type="radio" name="options" id="VALUE1" value="VALUE1" />
-    <input class="invisible absolute h-0 w-0" type="radio" name="options" id="BUY" value="VALUE2" />
-    <input class="invisible absolute h-0 w-0" type="radio" name="options" id="VALUE3" value="VALUE3" />
+    <input class="tw-invisible tw-absolute tw-h-0 tw-w-0" type="radio" name="options" id="VALUE1" value="VALUE1" />
+    <input class="tw-invisible tw-absolute tw-h-0 tw-w-0" type="radio" name="options" id="BUY" value="VALUE2" />
+    <input class="tw-invisible tw-absolute tw-h-0 tw-w-0" type="radio" name="options" id="VALUE3" value="VALUE3" />
     <label
      for="VALUE1"
-     class="flex flex-grow cursor-pointer select-none items-center justify-center rounded-md p-2 sm:p-0"
+     class="tw-flex tw-flex-grow tw-cursor-pointer tw-select-none tw-items-center tw-justify-center tw-rounded-md tw-p-2 sm:tw-p-0"
      id="VALUE1_LABEL"
      >Value1</label
     >
     <label
      for="VALUE2"
-     class="flex flex-grow cursor-pointer select-none items-center justify-center rounded-md p-2 sm:p-0"
+     class="tw-flex tw-flex-grow tw-cursor-pointer tw-select-none tw-items-center tw-justify-center tw-rounded-md tw-p-2 sm:tw-p-0"
      id="VALUE2_LABEL"
      >Value2</label
     >
     <label
      for="VALUE3"
-     class="flex flex-grow cursor-pointer select-none items-center justify-center rounded-md p-2 sm:p-0"
+     class="tw-flex tw-flex-grow tw-cursor-pointer tw-select-none tw-items-center tw-justify-center tw-rounded-md tw-p-2 sm:tw-p-0"
      id="VALUE3_LABEL"
      >Value3</label
     >
    </div>
    <!-- ROW SECOND -->
-   <div class="flex flex-wrap gap-2 sm:col-span-8 sm:flex-nowrap">
+   <div class="tw-flex tw-flex-wrap tw-gap-2 sm:tw-col-span-8 sm:tw-flex-nowrap">
     <!-- SELECT FIRST -->
     <!-- DROP DOWN TOGGLE -->
-    <div id="SELECT_FIRST_CONTAINER" class="relative w-7 min-w-32 flex-grow cursor-pointer sm:min-w-0">
-     <input type="checkbox" id="SELECT_FIRST_TOGGLER" class="hidden" />
+    <div id="SELECT_FIRST_CONTAINER" class="tw-relative tw-w-7 tw-min-w-32 tw-flex-grow tw-cursor-pointer sm:tw-min-w-0">
+     <input type="checkbox" id="SELECT_FIRST_TOGGLER" class="tw-hidden" />
      <label
       for="SELECT_FIRST_TOGGLER"
       id="SELECT_FIRST_LABEL"
-      class="flex cursor-pointer select-none justify-between rounded-md bg-white px-4 py-3"
-      ><span class="overflow-hidden text-ellipsis whitespace-nowrap">Category1</span>
-      <span class="arrow-down self-center" id="SELECT_FIRST_CHEVRON"></span>
+      class="tw-flex tw-cursor-pointer tw-select-none tw-justify-between tw-rounded-md tw-bg-white tw-px-4 tw-py-3"
+      ><span class="tw-overflow-hidden tw-text-ellipsis tw-whitespace-nowrap">Category1</span>
+      <span class="tw-arrow-down tw-self-center" id="SELECT_FIRST_CHEVRON"></span>
      </label>
-     <select name="SELECT_FIRST" id="SELECT_FIRST" class="invisible absolute h-0 w-0">
+     <select name="SELECT_FIRST" id="SELECT_FIRST" class="tw-invisible tw-absolute tw-h-0 tw-w-0">
       <option value=""></option>
       <option value="Tab1Option1">Tab1Option1</option>
       <option value="Tab1Option2">Tab1Option2</option>
@@ -75,18 +75,18 @@
      </select>
      <!-- DROP DOWN MENU -->
      <div
-      class="dropdown shadow-custom invisible absolute right-0 top-full z-10 mt-3 flex w-max flex-col gap-6 rounded-lg bg-white px-3 sm:w-[325px]"
+      class="tw-dropdown tw-shadow-custom tw-invisible tw-absolute tw-right-0 tw-top-full tw-z-10 tw-mt-3 tw-flex tw-w-max tw-flex-col tw-gap-6 tw-rounded-lg tw-bg-white tw-px-3 sm:tw-w-[325px]"
       id="SELECT_FIRST_DROPDOWN"
      >
       <span
        id="SELECT_FIRST_ARROW_UP"
-       class="arrow-up absolute bottom-full right-[14px] border-[8px] border-b-white"
+       class="tw-arrow-up tw-absolute tw-bottom-full tw-right-[14px] tw-border-[8px] tw-border-b-white"
       ></span>
       <!-- TABS -->
-      <div class="flex w-full" id="SELECT_FIRST_TABS_CONTAINER">
+      <div class="tw-flex tw-w-full" id="SELECT_FIRST_TABS_CONTAINER">
        <button
         type="button"
-        class="selected-tab flex-1 cursor-pointer select-none border-b-2 px-2 pb-1 pt-3 text-center"
+        class="tw-selected-tab tw-flex-1 tw-cursor-pointer tw-select-none tw-border-b-2 tw-px-2 tw-pb-1 tw-pt-3 tw-text-center"
         id="SELECT_FIRST_CATEGORY1_TAB"
         data-controls="SELECT_FIRST_CATEGORY1_OPTIONS"
        >
@@ -94,7 +94,7 @@
        </button>
        <button
         type="button"
-        class="flex-1 cursor-pointer select-none border-b-2 px-2 pb-1 pt-3 text-center"
+        class="tw-flex-1 tw-cursor-pointer tw-select-none tw-border-b-2 tw-px-2 tw-pb-1 tw-pt-3 tw-text-center"
         id="SELECT_FIRST_CATEGORY2_TAB"
         data-controls="SELECT_SECOND_CATEGORY2_OPTIONS"
        >
@@ -103,43 +103,43 @@
       </div>
       <!-- TAB 1 CONTENT -->
       <div id="SELECT_FIRST_TAB_OPTIONS_CONTAINER">
-       <div class="grid gap-2 sm:grid-cols-2" id="SELECT_FIRST_CATEGORY1_OPTIONS">
+       <div class="tw-grid tw-gap-2 sm:tw-grid-cols-2" id="SELECT_FIRST_CATEGORY1_OPTIONS">
         <span
-         class="col-span-1 cursor-pointer select-none rounded-md rounded-l-full rounded-r-full border px-2 py-1 text-center text-sm hover:bg-gray-100"
+         class="tw-col-span-1 tw-cursor-pointer tw-select-none tw-rounded-md tw-rounded-l-full tw-rounded-r-full tw-border tw-px-2 tw-py-1 tw-text-center tw-text-sm hover:tw-bg-gray-100"
          id="SELECT_FIRST_TAB1OPTION1_LABEL"
          >Tab1Option1</span
         >
         <span
-         class="col-span-1 cursor-pointer select-none rounded-l-full rounded-r-full border px-2 py-1 text-center text-sm hover:bg-gray-100"
+         class="tw-col-span-1 tw-cursor-pointer tw-select-none tw-rounded-l-full tw-rounded-r-full tw-border tw-px-2 tw-py-1 tw-text-center tw-text-sm hover:tw-bg-gray-100"
          id="SELECT_FIRST_TAB1OPTION2_LABEL"
          >Tab1Option2</span
         >
        </div>
        <!-- TAB 2 CONTENT -->
-       <div class="grid gap-2 sm:grid-cols-2" id="SELECT_SECOND_CATEGORY2_OPTIONS">
+       <div class="tw-grid tw-gap-2 sm:tw-grid-cols-2" id="SELECT_SECOND_CATEGORY2_OPTIONS">
         <span
-         class="col-span-1 cursor-pointer select-none rounded-l-full rounded-r-full border px-2 py-1 text-center text-sm hover:bg-gray-100"
+         class="tw-col-span-1 tw-cursor-pointer tw-select-none tw-rounded-l-full tw-rounded-r-full tw-border tw-px-2 tw-py-1 tw-text-center tw-text-sm hover:tw-bg-gray-100         "
          id="SELECT_FIRST_TAB2OPTION1_LABEL"
          >Tab2Option1</span
         >
         <span
-         class="col-span-1 cursor-pointer select-none rounded-l-full rounded-r-full border px-2 py-1 text-center text-sm hover:bg-gray-100"
+         class="tw-col-span-1 tw-cursor-pointer tw-select-none tw-rounded-l-full tw-rounded-r-full tw-border tw-px-2 tw-py-1 tw-text-center tw-text-sm hover:tw-bg-gray-100"
          id="SELECT_FIRST_TAB2OPTION2_LABEL"
          >Tab2Option2</span
         >
        </div>
       </div>
-      <div class="SELECT_FIRST_DD_BUTTON_CONTAINER flex flex-grow gap-2">
+      <div class="tw-SELECT_FIRST_DD_BUTTON_CONTAINER tw-flex tw-flex-grow tw-gap-2">
        <button
         type="button"
-        class="inline-block flex-grow rounded-md border border-teal-900 p-1 text-teal-900"
+        class="tw-inline-block tw-flex-grow tw-rounded-md tw-border tw-border-teal-900 tw-p-1 tw-text-teal-900"
         id="SELECT_FIRST_DD_RESET_BUTTON"
        >
         Reset
        </button>
        <button
         type="button"
-        class="inline-block flex-grow rounded-md bg-teal-900 p-1 text-white"
+        class="tw-inline-block tw-flex-grow tw-rounded-md tw-bg-teal-900 tw-p-1 tw-text-white"
         id="SELECT_FIRST_DD_DONE_BUTTON"
        >
         Done
@@ -152,45 +152,45 @@
     <!-- SELECT SECOND -->
 
     <!-- DROP DOWN TOGGLE -->
-    <div id="SELECT_SECOND_CONTAINER" class="relative w-7 min-w-32 flex-grow cursor-pointer sm:min-w-0">
-     <input type="checkbox" id="SELECT_SECOND_TOGGLER" class="hidden" />
+    <div id="SELECT_SECOND_CONTAINER" class="tw-relative tw-w-7 tw-min-w-32 tw-flex-grow tw-cursor-pointer sm:tw-min-w-0">
+     <input type="checkbox" id="SELECT_SECOND_TOGGLER" class="tw-hidden" />
      <label
       for="SELECT_SECOND_TOGGLER"
       id="SELECT_SECOND_LABEL"
-      class="flex cursor-pointer select-none justify-between rounded-md bg-white px-4 py-3"
-      ><span class="overflow-hidden text-ellipsis whitespace-nowrap">Beds & Baths</span>
-      <span class="arrow-down self-center" id="SELECT_SECOND_CHEVRON"></span>
+      class="tw-flex tw-cursor-pointer tw-select-none tw-justify-between tw-rounded-md tw-bg-white tw-px-4 tw-py-3"
+      ><span class="tw-overflow-hidden tw-text-ellipsis tw-whitespace-nowrap">Beds & Baths</span>
+      <span class="tw-arrow-down tw-self-center" id="SELECT_SECOND_CHEVRON"></span>
      </label>
      <!-- DROP DOWN MENU -->
      <div
-      class="dropdown shadow-custom invisible absolute right-0 top-full z-10 mt-3 flex w-max flex-col gap-6 rounded-lg bg-white p-3 sm:w-[325px]"
+      class="tw-dropdown tw-shadow-custom tw-invisible tw-absolute tw-right-0 tw-top-full tw-z-10 tw-mt-3 tw-flex tw-min-w-60 tw-flex-col tw-gap-6 tw-rounded-lg tw-bg-white tw-p-3 sm:tw-w-[325px]"
       id="SELECT_SECOND_DROPDOWN"
      >
       <span
        id="SELECT_SECOND_ARROW_UP"
-       class="arrow-up absolute bottom-full right-[14px] border-[8px] border-b-white"
+       class="tw-arrow-up tw-absolute tw-bottom-full tw-right-[14px] tw-border-[8px] tw-border-b-white"
       ></span>
       <!-- CHECKBOXES / OPTIONS -->
       <div id="BEDS_OPTIONS_CONTAINER">
-       <h2 class="mb-3">Beds</h2>
-       <input type="checkbox" name="beds" value="studio" id="studio" class="hidden" />
-       <input type="checkbox" name="beds" value="1" id="1bed" class="hidden" />
-       <input type="checkbox" name="beds" value="8+" id="8+" class="hidden" />
-       <div class="flex flex-wrap gap-2">
+       <h2 class="tw-mb-3">Beds</h2>
+       <input type="checkbox" name="beds" value="studio" id="studio" class="tw-hidden" />
+       <input type="checkbox" name="beds" value="1" id="1bed" class="tw-hidden" />
+       <input type="checkbox" name="beds" value="8+" id="8+" class="tw-hidden" />
+       <div class="tw-flex tw-flex-wrap tw-gap-2">
         <label
-         class="cursor-pointer select-none rounded-md rounded-l-full rounded-r-full border px-4 py-1 text-center text-sm hover:bg-gray-100"
+         class="tw-cursor-pointer tw-select-none tw-rounded-md tw-rounded-l-full tw-rounded-r-full tw-border tw-px-4 tw-py-1 tw-text-center tw-text-sm hover:tw-bg-gray-100"
          id=""
          for="studio"
          >Studio</label
         >
         <label
-         class="cursor-pointer select-none rounded-md rounded-l-full rounded-r-full border px-4 py-1 text-center text-sm hover:bg-gray-100"
+         class="tw-cursor-pointer tw-select-none tw-rounded-md tw-rounded-l-full tw-rounded-r-full tw-border tw-px-4 tw-py-1 tw-text-center tw-text-sm hover:tw-bg-gray-100"
          id=""
          for="1bed"
          >1</label
         >
         <label
-         class="cursor-pointer select-none rounded-md rounded-l-full rounded-r-full border px-4 py-1 text-center text-sm hover:bg-gray-100"
+         class="tw-cursor-pointer tw-select-none tw-rounded-md tw-rounded-l-full tw-rounded-r-full tw-border tw-px-4 tw-py-1 tw-text-center tw-text-sm hover:tw-bg-gray-100"
          id=""
          for="8+"
          >8+</label
@@ -198,18 +198,18 @@
        </div>
       </div>
       <div id="BATHS_OPTIONS_CONTAINER">
-       <h2 class="mb-3">Baths</h2>
-       <input type="checkbox" name="baths" value="1" id="1bath" class="hidden" />
-       <input type="checkbox" name="baths" value="6+" id="6+" class="hidden" />
-       <div class="flex flex-wrap gap-2">
+       <h2 class="tw-mb-3">Baths</h2>
+       <input type="checkbox" name="baths" value="1" id="1bath" class="tw-hidden" />
+       <input type="checkbox" name="baths" value="6+" id="6+" class="tw-hidden" />
+       <div class="tw-flex tw-flex-wrap tw-gap-2">
         <label
-         class="cursor-pointer select-none rounded-md rounded-l-full rounded-r-full border px-4 py-1 text-center text-sm hover:bg-gray-100"
+         class="tw-cursor-pointer tw-select-none tw-rounded-md tw-rounded-l-full tw-rounded-r-full tw-border tw-px-4 tw-py-1 tw-text-center tw-text-sm hover:tw-bg-gray-100"
          id=""
          for="1bath"
          >1</label
         >
         <label
-         class="cursor-pointer select-none rounded-md rounded-l-full rounded-r-full border px-4 py-1 text-center text-sm hover:bg-gray-100"
+         class="tw-cursor-pointer tw-select-none tw-rounded-md tw-rounded-l-full tw-rounded-r-full tw-border tw-px-4 tw-py-1 tw-text-center tw-text-sm hover:tw-bg-gray-100"
          id=""
          for="6+"
          >6+</label
@@ -217,17 +217,17 @@
        </div>
       </div>
       <!-- END OF CHECKBOXES / OPTIONS -->
-      <div class="SELECT_SECOND_DD_BUTTON_CONTAINER flex flex-grow gap-2">
+      <div class="tw-SELECT_SECOND_DD_BUTTON_CONTAINER tw-flex tw-flex-grow tw-gap-2">
        <button
         type="button"
-        class="inline-block flex-grow rounded-md border border-teal-900 p-1 text-teal-900"
+        class="tw-inline-block tw-flex-grow tw-rounded-md tw-border tw-border-teal-900 tw-p-1 tw-text-teal-900"
         id="SELECT_SECOND_DD_RESET_BUTTON"
        >
         Reset
        </button>
        <button
         type="button"
-        class="inline-block flex-grow rounded-md bg-teal-900 p-1 text-white"
+        class="tw-inline-block tw-flex-grow tw-rounded-md tw-bg-teal-900 tw-p-1 tw-text-white"
         id="SELECT_SECOND_DD_DONE_BUTTON"
        >
         Done
@@ -240,77 +240,77 @@
     <!-- SELECT THIRD -->
 
     <!-- DROP DOWN TOGGLE -->
-    <div id="SELECT_THIRD_CONTAINER" class="relative w-7 min-w-32 flex-grow cursor-pointer sm:min-w-0">
-     <input type="checkbox" id="SELECT_THIRD_TOGGLER" class="hidden" />
+    <div id="SELECT_THIRD_CONTAINER" class="tw-relative tw-w-7 tw-min-w-32 tw-flex-grow tw-cursor-pointer sm:tw-min-w-0">
+     <input type="checkbox" id="SELECT_THIRD_TOGGLER" class="tw-hidden" />
      <label
       for="SELECT_THIRD_TOGGLER"
       id="SELECT_THIRD_LABEL"
-      class="flex cursor-pointer select-none justify-between rounded-md bg-white px-4 py-3"
-      ><span class="overflow-hidden text-ellipsis whitespace-nowrap">Price (AED)</span>
-      <span class="arrow-down self-center" id="SELECT_THIRD_CHEVRON"></span>
+      class="tw-flex tw-cursor-pointer tw-select-none tw-justify-between tw-rounded-md tw-bg-white tw-px-4 tw-py-3"
+      ><span class="tw-overflow-hidden tw-text-ellipsis tw-whitespace-nowrap">Price (AED)</span>
+      <span class="tw-arrow-down tw-self-center" id="SELECT_THIRD_CHEVRON"></span>
      </label>
-     <!-- DROP DOWN MENU -->
-     <div
-      class="dropdown shadow-custom invisible absolute right-0 top-full z-10 mt-3 flex min-w-60 flex-col gap-6 rounded-lg bg-white p-3 sm:w-[325px]"
-      id="SELECT_THIRD_DROPDOWN"
-     >
-      <span
-       id="SELECT_THIRD_ARROW_UP"
-       class="arrow-up absolute bottom-full right-[14px] border-[8px] border-b-white"
-      ></span>
-      <!-- RANGE SELECTOR -->
-      <div class="flex gap-2" id="PRICE_FILTER_CONTAINER">
-       <div id="MINIMUM_FIELD_CONTAINER" class="relative">
-        <label for="minimum" class="mb-2 block w-fit select-none text-sm text-gray-400">Minimum</label>
-        <input
-         type="number"
-         placeholder="0"
-         step="500"
-         min="0"
-         value="0"
-         name="minimum-price"
-         id="minimum"
-         class="w-full rounded-lg border px-3 py-2 focus:border focus:border-teal-900 focus:outline-none"
-        />
+          <!-- DROP DOWN MENU -->
+          <div
+          class="tw-dropdown tw-shadow-custom tw-invisible tw-absolute tw-right-0 tw-top-full tw-z-10 tw-mt-3 tw-flex tw-min-w-60 tw-flex-col tw-gap-6 tw-rounded-lg tw-bg-white tw-p-3 sm:tw-w-[325px]"
+          id="SELECT_THIRD_DROPDOWN"
+         >
+          <span
+           id="SELECT_THIRD_ARROW_UP"
+           class="tw-arrow-up tw-absolute tw-bottom-full tw-right-[14px] tw-border-[8px] tw-border-b-white"
+          ></span>
+          <!-- RANGE SELECTOR -->
+          <div class="tw-flex tw-gap-2" id="PRICE_FILTER_CONTAINER">
+           <div id="MINIMUM_FIELD_CONTAINER" class="tw-relative">
+            <label for="minimum" class="tw-mb-2 tw-block tw-w-fit tw-select-none tw-text-sm tw-text-gray-400">Minimum</label>
+            <input
+             type="number"
+             placeholder="0"
+             step="500"
+             min="0"
+             value="0"
+             name="minimum-price"
+             id="minimum"
+             class="tw-w-full tw-rounded-lg tw-border tw-px-3 tw-py-2 focus:tw-border focus:tw-border-teal-900 focus:tw-outline-none"
+            />
+           </div>
+           <div id="MAXIMUM_FIELD_CONTAINER" class="tw-relative">
+            <label for="maximum" class="tw-mb-2 tw-block tw-w-fit tw-select-none tw-text-sm tw-text-gray-400">Maximum</label>
+            <input
+             type="number"
+             placeholder="Any"
+             step="500"
+             name="maximum-price"
+             id="maximum"
+             class="tw-w-full tw-rounded-lg tw-border tw-px-3 tw-py-2 focus:tw-border focus:tw-border-teal-900 focus:tw-outline-none"
+            />
+           </div>
+          </div>
+          <div class="tw-SELECT_THIRD_DD_BUTTON_CONTAINER tw-flex tw-flex-grow tw-gap-2">
+           <button
+            type="button"
+            class="tw-inline-block tw-basis-1/2 tw-rounded-md tw-border tw-border-teal-900 tw-p-1 tw-text-teal-900"
+            id="SELECT_THIRD_DD_RESET_BUTTON"
+           >
+            Reset
+           </button>
+           <button
+            type="button"
+            class="tw-inline-block tw-basis-1/2 tw-rounded-md tw-bg-teal-900 tw-p-1 tw-text-white"
+            id="SELECT_THIRD_DD_DONE_BUTTON"
+           >
+            Done
+           </button>
+          </div>
+         </div>
+         <!-- DROPDOWN MENU ENDS HERE -->
+        </div>
        </div>
-       <div id="MAXIMUM_FIELD_CONTAINER" class="relative">
-        <label for="maximum" class="mb-2 block w-fit select-none text-sm text-gray-400">Maximum</label>
-        <input
-         type="number"
-         placeholder="Any"
-         step="500"
-         name="maximum-price"
-         id="maximum"
-         class="w-full rounded-lg border px-3 py-2 focus:border focus:border-teal-900 focus:outline-none"
-        />
-       </div>
-      </div>
-      <div class="SELECT_THIRD_DD_BUTTON_CONTAINER flex flex-grow gap-2">
-       <button
-        type="button"
-        class="inline-block basis-1/2 rounded-md border border-teal-900 p-1 text-teal-900"
-        id="SELECT_THIRD_DD_RESET_BUTTON"
-       >
-        Reset
-       </button>
-       <button
-        type="button"
-        class="inline-block basis-1/2 rounded-md bg-teal-900 p-1 text-white"
-        id="SELECT_THIRD_DD_DONE_BUTTON"
-       >
-        Done
-       </button>
-      </div>
-     </div>
-     <!-- DROPDOWN MENU ENDS HERE -->
-    </div>
-   </div>
-   <!-- FIND BUTTON -->
-   <button class="rounded-md bg-green-600 px-2 py-3 text-white sm:col-start-9 sm:col-end-13">Find</button>
-   <!-- ROW THIRD -->
-   <a class="bg-haver rounded-md px-2 py-3 text-white sm:col-span-12" href="">Search 2.0</a>
-  </form>
-
-  <script src="./script.js"></script>
- </body>
+       <!-- FIND BUTTON -->
+       <button class="tw-rounded-md tw-bg-green-600 tw-px-2 tw-py-3 tw-text-white sm:tw-col-start-9 sm:tw-col-end-13">Find</button>
+       <!-- ROW THIRD -->
+       <a class="tw-bg-haver tw-rounded-md tw-px-2 tw-py-3 tw-text-white sm:tw-col-span-12" href="">Search 2.0</a>
+      </form>
+    
+      <script src="./script.js"></script>
+     </body>    
 </html>
