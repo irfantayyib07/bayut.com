@@ -1,346 +1,209 @@
 <!doctype html>
 <html lang="en">
- <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="css/style.css" type="text/css" />
-  <title>Tailwind Filter Form</title>
- </head>
 
- <body class="tw-flex tw-min-h-screen tw-w-screen tw-items-center tw-justify-center tw-bg-yellow-950">
-  <form
-   id="filter-form"
-   class="tw-grid !h-auto tw-text-left tw-font-normal tw-basis-3/4 tw-grid-cols-1 tw-gap-3 tw-rounded-md tw-bg-black tw-bg-opacity-50 tw-p-4 sm:tw-min-w-[560px] sm:tw-grid-cols-12"
-   novalidate
-  >
-   <!-- ROW FIRST -->
-   <!-- LOCATION SEARCH BAR (COLUMN FIRST) -->
-   <div class="tw-flex sm:tw-col-span-8">
-    <label class="tw-flex tw-cursor-pointer tw-rounded-bl-md tw-rounded-tl-md tw-bg-white tw-p-3" for="location"
-     ><img src="./assets/location.svg" alt="location" class="tw-w-6 tw-self-center"
-    /></label>
-    <input
-     class="tw-w-full tw-rounded-md tw-rounded-bl-none tw-rounded-tl-none tw-px-2 tw-py-3 focus:tw-outline-none"
-     type="text"
-     id="location"
-     placeholder="Enter Location"
-    />
-   </div>
-   <!-- RADIO BUTTONS (RENT, BUY, OFFPLAN) (COLUMN SECOND) -->
-   <div
-    class="tw-flex tw-flex-wrap tw-rounded-md tw-bg-white tw-p-1 sm:tw-col-start-9 sm:tw-col-end-13"
-    id="ownership-options-container"
-   >
-    <input class="tw-invisible tw-absolute tw-h-0 tw-w-0" type="radio" name="ownership" id="buy" value="buy" />
-    <input class="tw-invisible tw-absolute tw-h-0 tw-w-0" type="radio" name="ownership" id="rent" value="rent" />
-    <label
-     for="buy"
-     class="tw-flex tw-flex-grow tw-cursor-pointer tw-select-none tw-items-center tw-justify-center tw-rounded-md tw-p-2 sm:tw-p-0"
-     id="buy-label"
-     >Buy</label
-    >
-    <label
-     for="rent"
-     class="tw-flex tw-flex-grow tw-cursor-pointer tw-select-none tw-items-center tw-justify-center tw-rounded-md tw-p-2 sm:tw-p-0"
-     id="rent-label"
-     >Rent</label
-    >
-   </div>
-   <!-- ROW SECOND -->
-   <div class="tw-flex tw-flex-wrap tw-gap-2 sm:tw-col-span-8 sm:tw-flex-nowrap">
-    <!-- SELECT FIRST -->
-    <!-- DROP DOWN TOGGLE -->
-    <div id="category-select-container" class="tw-relative tw-w-7 tw-min-w-32 tw-flex-grow tw-cursor-pointer sm:tw-min-w-0">
-     <input type="checkbox" id="category-select-toggler" class="tw-hidden" />
-     <label
-      for="category-select-toggler"
-      id="category-select-label"
-      class="tw-flex tw-cursor-pointer tw-select-none tw-justify-between tw-rounded-md tw-bg-white tw-px-4 tw-py-3"
-      ><span class="tw-overflow-hidden tw-text-ellipsis tw-whitespace-nowrap">Category</span>
-      <span class="tw-arrow-down tw-self-center" id="category-select-chevron"></span>
-     </label>
-     <select name="category-select" id="category-select" class="tw-invisible tw-absolute tw-h-0 tw-w-0">
-      <option value=""></option>
-      <option value="apartment">apartment</option>
-      <option value="villa">villa</option>
-      <option value="condo">condo</option>
-      <option value="house">house</option>
-      <option value="land">land</option>
-      <option value="commerical property">commerical property</option>
-     </select>
-     <!-- DROP DOWN MENU -->
-     <div
-      class="tw-dropdown tw-shadow-custom tw-invisible tw-absolute tw-right-0 tw-top-full tw-z-10 tw-mt-3 tw-flex tw-w-max tw-flex-col tw-gap-6 tw-rounded-lg tw-bg-white tw-px-3 sm:tw-w-[325px]"
-      id="category-select-dropdown"
-     >
-      <span
-       id="category-select-arrow-up"
-       class="tw-arrow-up tw-absolute tw-bottom-full tw-right-[14px] tw-border-[8px] tw-border-b-white"
-      ></span>
-      <!-- TABS -->
-      <div class="tw-flex tw-w-full" id="category-select-tabs-container">
-       <button
-        type="button"
-        class="tw-selected-tab tw-flex-1 tw-cursor-pointer tw-select-none tw-border-b-2 tw-px-2 tw-pb-1 tw-pt-3 tw-text-center"
-        id="category-select-residential-tab"
-        data-controls="category-select-residential-options"
-       >
-        Residential
-       </button>
-       <button
-        type="button"
-        class="tw-flex-1 tw-cursor-pointer tw-select-none tw-border-b-2 tw-px-2 tw-pb-1 tw-pt-3 tw-text-center"
-        id="category-select-commercial-tab"
-        data-controls="category-select-commercial-options"
-       >
-        Commercial
-       </button>
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <link rel="stylesheet" href="css/style.css" type="text/css" />
+ <title>Tailwind Filter Form</title>
+</head>
+
+<body class="tw-flex tw-min-h-screen tw-w-screen tw-items-center tw-justify-center tw-bg-yellow-950">
+ <form id="filter-form"
+  class="tw-grid !h-auto tw-text-left tw-font-normal tw-basis-3/4 tw-grid-cols-1 tw-gap-3 tw-rounded-md tw-bg-black tw-bg-opacity-50 tw-p-4 sm:tw-min-w-[560px] sm:tw-grid-cols-12"
+  novalidate>
+  <!-- ROW FIRST -->
+  <!-- LOCATION SEARCH BAR (COLUMN FIRST) -->
+  <div class="tw-flex sm:tw-col-span-8">
+   <label class="tw-flex tw-cursor-pointer tw-rounded-bl-md tw-rounded-tl-md tw-bg-white tw-p-3" for="location"><img
+     src="./assets/location.svg" alt="location" class="tw-w-6 tw-self-center" /></label>
+   <input class="tw-w-full tw-rounded-md tw-rounded-bl-none tw-rounded-tl-none tw-px-2 tw-py-3 focus:tw-outline-none"
+    type="text" id="location" placeholder="Enter Location" />
+  </div>
+  <!-- RADIO BUTTONS (RENT, BUY, OFFPLAN) (COLUMN SECOND) -->
+  <div class="tw-flex tw-flex-wrap tw-rounded-md tw-bg-white tw-p-1 sm:tw-col-start-9 sm:tw-col-end-13"
+   id="ownership-options-container">
+   <input class="tw-ff-radio" type="radio" name="ownership" id="buy" value="buy" />
+   <input class="tw-ff-radio" type="radio" name="ownership" id="rent" value="rent" />
+   <label for="buy" class="tw-ff-radio-label" id="buy-label">Buy</label>
+   <label for="rent" class="tw-ff-radio-label" id="rent-label">Rent</label>
+  </div>
+  <!-- ROW SECOND -->
+  <div class="tw-flex tw-flex-wrap tw-gap-2 sm:tw-col-span-8 sm:tw-flex-nowrap">
+   <!-- SELECT FIRST -->
+   <!-- DROP DOWN TOGGLE -->
+   <div id="category-select-container"
+    class="tw-relative tw-w-7 tw-min-w-32 tw-flex-grow tw-cursor-pointer sm:tw-min-w-0">
+    <input type="checkbox" id="category-select-toggler" class="tw-hidden" />
+    <label for="category-select-toggler" id="category-select-label" class="tw-ff-select"><span
+      class="tw-overflow-hidden tw-text-ellipsis tw-whitespace-nowrap">Category</span>
+     <span class="tw-arrow-down tw-self-center" id="category-select-chevron"></span>
+    </label>
+    <select name="category-select" id="category-select" class="tw-invisible tw-absolute tw-h-0 tw-w-0">
+     <option value=""></option>
+     <option value="apartment">apartment</option>
+     <option value="villa">villa</option>
+     <option value="condo">condo</option>
+     <option value="house">house</option>
+     <option value="land">land</option>
+     <option value="commerical property">commerical property</option>
+    </select>
+    <!-- DROP DOWN MENU -->
+    <div class="tw-ff-dd tw-dropdown tw-right-0 !tw-pt-0 tw-invisible" id="category-select-dropdown">
+     <span id="category-select-arrow-up"
+      class="tw-arrow-up tw-absolute tw-bottom-full tw-right-[14px] tw-border-[8px] tw-border-b-white"></span>
+     <!-- TABS -->
+     <div class="tw-flex tw-w-full" id="category-select-tabs-container">
+      <button type="button"
+       class="tw-selected-tab tw-flex-1 tw-cursor-pointer tw-select-none tw-border-b-2 tw-px-2 tw-pb-1 tw-pt-3 tw-text-center"
+       id="category-select-residential-tab" data-controls="category-select-residential-options">
+       Residential
+      </button>
+      <button type="button"
+       class="tw-flex-1 tw-cursor-pointer tw-select-none tw-border-b-2 tw-px-2 tw-pb-1 tw-pt-3 tw-text-center"
+       id="category-select-commercial-tab" data-controls="category-select-commercial-options">
+       Commercial
+      </button>
+     </div>
+     <!-- TAB 1 CONTENT -->
+     <div id="category-select-options-container">
+      <div class="tw-grid tw-gap-2 sm:tw-grid-cols-2" id="category-select-residential-options">
+       <span class="tw-ff-tab-option hover:tw-bg-gray-100" id="category-select-residential-apartment">Apartment</span>
+       <span class="tw-ff-tab-option hover:tw-bg-gray-100" id="category-select-residential-villa">Villa</span>
+       <span class="tw-ff-tab-option hover:tw-bg-gray-100" id="category-select-residential-condo">Condo</span>
+       <span class="tw-ff-tab-option hover:tw-bg-gray-100" id="category-select-residential-house">House</span>
+       <span class="tw-ff-tab-option hover:tw-bg-gray-100" id="category-select-residential-land">Land</span>
       </div>
-      <!-- TAB 1 CONTENT -->
-      <div id="category-select-options-container">
-       <div class="tw-grid tw-gap-2 sm:tw-grid-cols-2" id="category-select-residential-options">
-        <span
-         class="tw-col-span-1 tw-cursor-pointer tw-select-none tw-rounded-md tw-rounded-l-full tw-rounded-r-full tw-border tw-px-2 tw-py-1 tw-text-center tw-text-sm hover:tw-bg-gray-100"
-         id="category-select-residential-apartment"
-         >Apartment</span
-        >
-        <span
-         class="tw-col-span-1 tw-cursor-pointer tw-select-none tw-rounded-l-full tw-rounded-r-full tw-border tw-px-2 tw-py-1 tw-text-center tw-text-sm hover:tw-bg-gray-100"
-         id="category-select-residential-villa"
-         >Villa</span
-        >
-        <span
-         class="tw-col-span-1 tw-cursor-pointer tw-select-none tw-rounded-l-full tw-rounded-r-full tw-border tw-px-2 tw-py-1 tw-text-center tw-text-sm hover:tw-bg-gray-100"
-         id="category-select-residential-condo"
-         >Condo</span
-        >
-        <span
-         class="tw-col-span-1 tw-cursor-pointer tw-select-none tw-rounded-l-full tw-rounded-r-full tw-border tw-px-2 tw-py-1 tw-text-center tw-text-sm hover:tw-bg-gray-100"
-         id="category-select-residential-house"
-         >House</span
-        >
-        <span
-         class="tw-col-span-1 tw-cursor-pointer tw-select-none tw-rounded-l-full tw-rounded-r-full tw-border tw-px-2 tw-py-1 tw-text-center tw-text-sm hover:tw-bg-gray-100"
-         id="category-select-residential-land"
-         >Land</span
-        >
-       </div>
-       <!-- TAB 2 CONTENT -->
-       <div class="tw-grid tw-gap-2 sm:tw-grid-cols-2" id="category-select-commercial-options">
-        <span
-         class="tw-col-span-1 tw-cursor-pointer tw-select-none tw-rounded-l-full tw-rounded-r-full tw-border tw-px-2 tw-py-1 tw-text-center tw-text-sm hover:tw-bg-gray-100         "
-         id="category-select-commercial-commercialproperty"
-         >Commerical Property</span
-        >
-       </div>
-      </div>
-      <div class="category-select-dd-button-container tw-flex tw-flex-grow tw-gap-2">
-       <button
-        type="button"
-        class="tw-inline-block tw-flex-grow tw-rounded-md tw-border tw-border-teal-900 tw-p-1 tw-text-teal-900"
-        id="category-select-reset-btn"
-       >
-        Reset
-       </button>
-       <button
-        type="button"
-        class="tw-inline-block tw-flex-grow tw-rounded-md tw-bg-teal-900 tw-p-1 tw-text-white"
-        id="category-select-done-btn"
-       >
-        Done
-       </button>
+      <!-- TAB 2 CONTENT -->
+      <div class="tw-grid tw-gap-2 sm:tw-grid-cols-2" id="category-select-commercial-options">
+       <span class="tw-ff-tab-option hover:tw-bg-gray-100" id="category-select-commercial-commercialproperty">Commerical Property</span>
       </div>
      </div>
-     <!-- DROPDOWN MENU ENDS HERE -->
+     <div class="category-select-dd-button-container tw-flex tw-flex-grow tw-gap-2">
+      <button type="button"
+       class="tw-inline-block tw-flex-grow tw-rounded-md tw-border tw-border-teal-900 tw-p-1 tw-text-teal-900"
+       id="category-select-reset-btn">
+       Reset
+      </button>
+      <button type="button" class="tw-inline-block tw-flex-grow tw-rounded-md tw-bg-teal-900 tw-p-1 tw-text-white"
+       id="category-select-done-btn">
+       Done
+      </button>
+     </div>
     </div>
+    <!-- DROPDOWN MENU ENDS HERE -->
+   </div>
 
-    <!-- SELECT SECOND -->
+   <!-- SELECT SECOND -->
 
-    <!-- DROP DOWN TOGGLE -->
-    <div id="bedsbaths-select-container" class="tw-relative tw-w-7 tw-min-w-32 tw-flex-grow tw-cursor-pointer sm:tw-min-w-0">
-     <input type="checkbox" id="bedsbaths-select-toggler" class="tw-hidden" />
-     <label
-      for="bedsbaths-select-toggler"
-      id="bedsbaths-select-label"
-      class="tw-flex tw-cursor-pointer tw-select-none tw-justify-between tw-rounded-md tw-bg-white tw-px-4 tw-py-3"
-      ><span class="tw-overflow-hidden tw-text-ellipsis tw-whitespace-nowrap">Bedrooms & Bathrooms</span>
-      <span class="tw-arrow-down tw-self-center" id="bedsbaths-select-chevron"></span>
-     </label>
-     <!-- DROP DOWN MENU -->
-     <div
-      class="tw-dropdown tw-shadow-custom tw-invisible tw-absolute tw-right-0 tw-top-full tw-z-10 tw-mt-3 tw-flex tw-min-w-60 tw-flex-col tw-gap-6 tw-rounded-lg tw-bg-white tw-p-3 sm:tw-w-[325px]"
-      id="bedsbaths-select-dropdown"
-     >
-      <span
-       id="bedsbaths-select-arrow-up"
-       class="tw-arrow-up tw-absolute tw-bottom-full tw-right-[14px] tw-border-[8px] tw-border-b-white"
-      ></span>
-      <!-- CHECKBOXES / OPTIONS -->
-      <div id="bedrooms-options-container">
-       <h2 class="tw-mb-3">Bedrooms</h2>
-       <input type="checkbox" name="bedrooms" value="1" id="1bedroom" class="tw-hidden" />
-       <input type="checkbox" name="bedrooms" value="2" id="2bedroom" class="tw-hidden" />
-       <input type="checkbox" name="bedrooms" value="3" id="3bedroom" class="tw-hidden" />
-       <input type="checkbox" name="bedrooms" value="4" id="4bedroom" class="tw-hidden" />
-       <input type="checkbox" name="bedrooms" value="5+" id="5+bedroom" class="tw-hidden" />
-       <div class="tw-flex tw-flex-wrap tw-gap-2">
-        <label
-         class="tw-cursor-pointer tw-select-none tw-rounded-md tw-rounded-l-full tw-rounded-r-full tw-border tw-px-4 tw-py-1 tw-text-center tw-text-sm hover:tw-bg-gray-100"
-         id=""
-         for="1bedroom"
-         >1</label>
-        <label
-         class="tw-cursor-pointer tw-select-none tw-rounded-md tw-rounded-l-full tw-rounded-r-full tw-border tw-px-4 tw-py-1 tw-text-center tw-text-sm hover:tw-bg-gray-100"
-         id=""
-         for="2bedroom"
-         >2</label>
-        <label
-         class="tw-cursor-pointer tw-select-none tw-rounded-md tw-rounded-l-full tw-rounded-r-full tw-border tw-px-4 tw-py-1 tw-text-center tw-text-sm hover:tw-bg-gray-100"
-         id=""
-         for="3bedroom"
-         >3</label>
-        <label
-         class="tw-cursor-pointer tw-select-none tw-rounded-md tw-rounded-l-full tw-rounded-r-full tw-border tw-px-4 tw-py-1 tw-text-center tw-text-sm hover:tw-bg-gray-100"
-         id=""
-         for="4bedroom"
-         >4</label>
-        <label
-         class="tw-cursor-pointer tw-select-none tw-rounded-md tw-rounded-l-full tw-rounded-r-full tw-border tw-px-4 tw-py-1 tw-text-center tw-text-sm hover:tw-bg-gray-100"
-         id=""
-         for="5+bedroom"
-         >5+</label>
-       </div>
-      </div>
-      <div id="bathrooms-options-container">
-       <h2 class="tw-mb-3">Bathrooms</h2>
-       <input type="checkbox" name="bathrooms" value="1" id="1bathroom" class="tw-hidden" />
-       <input type="checkbox" name="bathrooms" value="2" id="2bathroom" class="tw-hidden" />
-       <input type="checkbox" name="bathrooms" value="3" id="3bathroom" class="tw-hidden" />
-       <input type="checkbox" name="bathrooms" value="4" id="4bathroom" class="tw-hidden" />
-       <input type="checkbox" name="bathrooms" value="5+" id="5+bathroom" class="tw-hidden" />
-       <div class="tw-flex tw-flex-wrap tw-gap-2">
-        <label
-         class="tw-cursor-pointer tw-select-none tw-rounded-md tw-rounded-l-full tw-rounded-r-full tw-border tw-px-4 tw-py-1 tw-text-center tw-text-sm hover:tw-bg-gray-100"
-         id=""
-         for="1bathroom"
-         >1</label>
-        <label
-         class="tw-cursor-pointer tw-select-none tw-rounded-md tw-rounded-l-full tw-rounded-r-full tw-border tw-px-4 tw-py-1 tw-text-center tw-text-sm hover:tw-bg-gray-100"
-         id=""
-         for="2bathroom"
-         >2</label>
-        <label
-         class="tw-cursor-pointer tw-select-none tw-rounded-md tw-rounded-l-full tw-rounded-r-full tw-border tw-px-4 tw-py-1 tw-text-center tw-text-sm hover:tw-bg-gray-100"
-         id=""
-         for="3bathroom"
-         >3</label>
-        <label
-         class="tw-cursor-pointer tw-select-none tw-rounded-md tw-rounded-l-full tw-rounded-r-full tw-border tw-px-4 tw-py-1 tw-text-center tw-text-sm hover:tw-bg-gray-100"
-         id=""
-         for="4bathroom"
-         >4</label>
-        <label
-         class="tw-cursor-pointer tw-select-none tw-rounded-md tw-rounded-l-full tw-rounded-r-full tw-border tw-px-4 tw-py-1 tw-text-center tw-text-sm hover:tw-bg-gray-100"
-         id=""
-         for="5+bathroom"
-         >5+</label>
-       </div>
-      </div>
-      <!-- END OF CHECKBOXES / OPTIONS -->
-      <div class="bedsbaths-select-dd-button-container tw-flex tw-flex-grow tw-gap-2">
-       <button
-        type="button"
-        class="tw-inline-block tw-flex-grow tw-rounded-md tw-border tw-border-teal-900 tw-p-1 tw-text-teal-900"
-        id="bedsbaths-select-reset-btn"
-       >
-        Reset
-       </button>
-       <button
-        type="button"
-        class="tw-inline-block tw-flex-grow tw-rounded-md tw-bg-teal-900 tw-p-1 tw-text-white"
-        id="bedsbaths-select-done-btn"
-       >
-        Done
-       </button>
+   <!-- DROP DOWN TOGGLE -->
+   <div id="bedsbaths-select-container"
+    class="tw-relative tw-w-7 tw-min-w-32 tw-flex-grow tw-cursor-pointer sm:tw-min-w-0">
+    <input type="checkbox" id="bedsbaths-select-toggler" class="tw-hidden" />
+    <label for="bedsbaths-select-toggler" id="bedsbaths-select-label" class="tw-ff-select"><span
+      class="tw-overflow-hidden tw-text-ellipsis tw-whitespace-nowrap">Bedrooms & Bathrooms</span>
+     <span class="tw-arrow-down tw-self-center" id="bedsbaths-select-chevron"></span>
+    </label>
+    <!-- DROP DOWN MENU -->
+    <div class="tw-ff-dd tw-dropdown tw-right-0 tw-invisible" id="bedsbaths-select-dropdown">
+     <span id="bedsbaths-select-arrow-up"
+      class="tw-arrow-up tw-absolute tw-bottom-full tw-right-[14px] tw-border-[8px] tw-border-b-white"></span>
+     <!-- CHECKBOXES / OPTIONS -->
+     <div id="bedrooms-options-container">
+      <h2 class="tw-mb-3">Bedrooms</h2>
+      <input type="checkbox" name="bedrooms" value="1" id="1bedroom" class="tw-hidden" />
+      <input type="checkbox" name="bedrooms" value="2" id="2bedroom" class="tw-hidden" />
+      <input type="checkbox" name="bedrooms" value="3" id="3bedroom" class="tw-hidden" />
+      <input type="checkbox" name="bedrooms" value="4" id="4bedroom" class="tw-hidden" />
+      <input type="checkbox" name="bedrooms" value="5+" id="5+bedroom" class="tw-hidden" />
+      <div class="tw-flex tw-flex-wrap tw-gap-2">
+       <label class="tw-ff-check-option hover:tw-bg-gray-100" id="" for="1bedroom">1</label>
+       <label class="tw-ff-check-option hover:tw-bg-gray-100" id="" for="2bedroom">2</label>
+       <label class="tw-ff-check-option hover:tw-bg-gray-100" id="" for="3bedroom">3</label>
+       <label class="tw-ff-check-option hover:tw-bg-gray-100" id="" for="4bedroom">4</label>
+       <label class="tw-ff-check-option hover:tw-bg-gray-100" id="" for="5+bedroom">5+</label>
       </div>
      </div>
-     <!-- DROPDOWN MENU ENDS HERE -->
+     <div id="bathrooms-options-container">
+      <h2 class="tw-mb-3">Bathrooms</h2>
+      <input type="checkbox" name="bathrooms" value="1" id="1bathroom" class="tw-hidden" />
+      <input type="checkbox" name="bathrooms" value="2" id="2bathroom" class="tw-hidden" />
+      <input type="checkbox" name="bathrooms" value="3" id="3bathroom" class="tw-hidden" />
+      <input type="checkbox" name="bathrooms" value="4" id="4bathroom" class="tw-hidden" />
+      <input type="checkbox" name="bathrooms" value="5+" id="5+bathroom" class="tw-hidden" />
+      <div class="tw-flex tw-flex-wrap tw-gap-2">
+       <label class="tw-ff-check-option hover:tw-bg-gray-100" id="" for="1bathroom">1</label>
+       <label class="tw-ff-check-option hover:tw-bg-gray-100" id="" for="2bathroom">2</label>
+       <label class="tw-ff-check-option hover:tw-bg-gray-100" id="" for="3bathroom">3</label>
+       <label class="tw-ff-check-option hover:tw-bg-gray-100" id="" for="4bathroom">4</label>
+       <label class="tw-ff-check-option hover:tw-bg-gray-100" id="" for="5+bathroom">5+</label>
+      </div>
+     </div>
+     <!-- END OF CHECKBOXES / OPTIONS -->
+     <div class="bedsbaths-select-dd-button-container tw-flex tw-flex-grow tw-gap-2">
+      <button type="button"
+       class="tw-inline-block tw-flex-grow tw-rounded-md tw-border tw-border-teal-900 tw-p-1 tw-text-teal-900"
+       id="bedsbaths-select-reset-btn">
+       Reset
+      </button>
+      <button type="button" class="tw-inline-block tw-flex-grow tw-rounded-md tw-bg-teal-900 tw-p-1 tw-text-white"
+       id="bedsbaths-select-done-btn">
+       Done
+      </button>
+     </div>
     </div>
+    <!-- DROPDOWN MENU ENDS HERE -->
+   </div>
 
-    <!-- SELECT THIRD -->
+   <!-- SELECT THIRD -->
 
-    <!-- DROP DOWN TOGGLE -->
-    <div id="SELECT_THIRD_CONTAINER" class="tw-relative tw-w-7 tw-min-w-32 tw-flex-grow tw-cursor-pointer sm:tw-min-w-0">
-     <input type="checkbox" id="SELECT_THIRD_TOGGLER" class="tw-hidden" />
-     <label
-      for="SELECT_THIRD_TOGGLER"
-      id="SELECT_THIRD_LABEL"
-      class="tw-flex tw-cursor-pointer tw-select-none tw-justify-between tw-rounded-md tw-bg-white tw-px-4 tw-py-3"
-      ><span class="tw-overflow-hidden tw-text-ellipsis tw-whitespace-nowrap">Price (AED)</span>
-      <span class="tw-arrow-down tw-self-center" id="SELECT_THIRD_CHEVRON"></span>
-     </label>
-          <!-- DROP DOWN MENU -->
-          <div
-          class="tw-dropdown tw-shadow-custom tw-invisible tw-absolute tw-right-0 tw-top-full tw-z-10 tw-mt-3 tw-flex tw-min-w-60 tw-flex-col tw-gap-6 tw-rounded-lg tw-bg-white tw-p-3 sm:tw-w-[325px]"
-          id="SELECT_THIRD_DROPDOWN"
-         >
-          <span
-           id="SELECT_THIRD_ARROW_UP"
-           class="tw-arrow-up tw-absolute tw-bottom-full tw-right-[14px] tw-border-[8px] tw-border-b-white"
-          ></span>
-          <!-- RANGE SELECTOR -->
-          <div class="tw-flex tw-gap-2" id="PRICE_FILTER_CONTAINER">
-           <div id="MINIMUM_FIELD_CONTAINER" class="tw-relative">
-            <label for="minimum" class="tw-mb-2 tw-block tw-w-fit tw-select-none tw-text-sm tw-text-gray-400">Minimum</label>
-            <input
-             type="number"
-             placeholder="0"
-             step="500"
-             min="0"
-             value="0"
-             name="minimum-price"
-             id="minimum"
-             class="tw-w-full tw-rounded-lg tw-border tw-px-3 tw-py-2 focus:tw-border focus:tw-border-teal-900 focus:tw-outline-none"
-            />
-           </div>
-           <div id="MAXIMUM_FIELD_CONTAINER" class="tw-relative">
-            <label for="maximum" class="tw-mb-2 tw-block tw-w-fit tw-select-none tw-text-sm tw-text-gray-400">Maximum</label>
-            <input
-             type="number"
-             placeholder="Any"
-             step="500"
-             name="maximum-price"
-             id="maximum"
-             class="tw-w-full tw-rounded-lg tw-border tw-px-3 tw-py-2 focus:tw-border focus:tw-border-teal-900 focus:tw-outline-none"
-            />
-           </div>
-          </div>
-          <div class="tw-SELECT_THIRD_DD_BUTTON_CONTAINER tw-flex tw-flex-grow tw-gap-2">
-           <button
-            type="button"
-            class="tw-inline-block tw-basis-1/2 tw-rounded-md tw-border tw-border-teal-900 tw-p-1 tw-text-teal-900"
-            id="SELECT_THIRD_DD_RESET_BUTTON"
-           >
-            Reset
-           </button>
-           <button
-            type="button"
-            class="tw-inline-block tw-basis-1/2 tw-rounded-md tw-bg-teal-900 tw-p-1 tw-text-white"
-            id="SELECT_THIRD_DD_DONE_BUTTON"
-           >
-            Done
-           </button>
-          </div>
-         </div>
-         <!-- DROPDOWN MENU ENDS HERE -->
-        </div>
-       </div>
-       <!-- FIND BUTTON -->
-       <button class="tw-rounded-md tw-bg-green-600 tw-px-2 tw-py-3 tw-text-white sm:tw-col-start-9 sm:tw-col-end-13">Find</button>
-       <!-- ROW THIRD -->
-       <a class="tw-bg-blue-200 tw-text-black tw-rounded-md tw-px-2 tw-py-3 sm:tw-col-span-12" href="">Search 2.0</a>
-      </form>
-    
-      <script src="./script.js"></script>
-     </body>    
+   <!-- DROP DOWN TOGGLE -->
+   <div id="amount-select-container" class="tw-relative tw-w-7 tw-min-w-32 tw-flex-grow tw-cursor-pointer sm:tw-min-w-0">
+    <input type="checkbox" id="amount-select-toggler" class="tw-hidden" />
+    <label for="amount-select-toggler" id="amount-select-label" class="tw-ff-select"><span
+      class="tw-overflow-hidden tw-text-ellipsis tw-whitespace-nowrap">Price (AED)</span>
+     <span class="tw-arrow-down tw-self-center" id="amount-select-chevron"></span>
+    </label>
+    <!-- DROP DOWN MENU -->
+    <div class="tw-ff-dd tw-dropdown tw-right-0 tw-invisible" id="amount-select-dropdown">
+     <span id="amount-select-arrow-up"
+      class="tw-arrow-up tw-absolute tw-bottom-full tw-right-[14px] tw-border-[8px] tw-border-b-white"></span>
+     <!-- RANGE SELECTOR -->
+     <div class="tw-flex tw-gap-2" id="price-filter-container">
+      <div id="minimum-field-container" class="tw-relative">
+       <label for="minimum" class="tw-mb-2 tw-block tw-w-fit tw-select-none tw-text-sm tw-text-gray-400">Minimum</label>
+       <input type="number" placeholder="0" step="500" min="0" value="0" name="minimum-price" id="minimum"
+        class="tw-w-full tw-rounded-lg tw-border tw-px-3 tw-py-2 focus:tw-border focus:tw-border-teal-900 focus:tw-outline-none" />
+      </div>
+      <div id="maximum-field-container" class="tw-relative">
+       <label for="maximum" class="tw-mb-2 tw-block tw-w-fit tw-select-none tw-text-sm tw-text-gray-400">Maximum</label>
+       <input type="number" placeholder="Any" step="500" name="maximum-price" id="maximum"
+        class="tw-w-full tw-rounded-lg tw-border tw-px-3 tw-py-2 focus:tw-border focus:tw-border-teal-900 focus:tw-outline-none" />
+      </div>
+     </div>
+     <div class="amount-select-dd-buton-container tw-flex tw-flex-grow tw-gap-2">
+      <button type="button"
+       class="tw-inline-block tw-basis-1/2 tw-rounded-md tw-border tw-border-teal-900 tw-p-1 tw-text-teal-900"
+       id="amount-select-reset-btn">
+       Reset
+      </button>
+      <button type="button" class="tw-inline-block tw-basis-1/2 tw-rounded-md tw-bg-teal-900 tw-p-1 tw-text-white"
+       id="amount-select-done-btn">
+       Done
+      </button>
+     </div>
+    </div>
+    <!-- DROPDOWN MENU ENDS HERE -->
+   </div>
+  </div>
+  <!-- FIND BUTTON -->
+  <button
+   class="tw-rounded-md tw-bg-green-600 tw-px-2 tw-py-3 tw-text-white sm:tw-col-start-9 sm:tw-col-end-13">Find</button>
+  <!-- ROW THIRD -->
+  <a class="tw-bg-blue-200 tw-text-black tw-rounded-md tw-px-2 tw-py-3 sm:tw-col-span-12" href="">Search 2.0</a>
+ </form>
+
+ <script src="./script.js"></script>
+</body>
+
 </html>
