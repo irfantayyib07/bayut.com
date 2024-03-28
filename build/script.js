@@ -9,27 +9,27 @@ document.body.onload = () => {
 
 // RADIO BUTTONS
 
-const RADIO_BUTTONS_CONTAINER = document.getElementById("RADIO_BUTTONS_CONTAINER");
+const OWNERSHIP_OPTIONS_CONTAINER = document.getElementById("ownership-options-container");
 
-RADIO_BUTTONS_CONTAINER.addEventListener("click", (e) => {
+OWNERSHIP_OPTIONS_CONTAINER.addEventListener("click", (e) => {
  if (e.target.tagName !== "LABEL") return;
- for (let elem of RADIO_BUTTONS_CONTAINER.children) elem.classList.remove("tw-checked-radio-label");
+ for (let elem of OWNERSHIP_OPTIONS_CONTAINER.children) elem.classList.remove("tw-checked-radio-label");
  e.target.classList.add("tw-checked-radio-label");
 });
 
-// SELECT_FIRST DD (DROPDOWN)
+// category-select DD (DROPDOWN)
 
 // DD TABS
 
-const SELECT_FIRST_TABS_CONTAINER = document.getElementById("SELECT_FIRST_TABS_CONTAINER");
-const SELECT_FIRST_TAB_OPTIONS_CONTAINER = document.getElementById("SELECT_FIRST_TAB_OPTIONS_CONTAINER");
+const CATEGORY_SELECT_TABS_CONTAINER = document.getElementById("category-select-tabs-container");
+const CATEGORY_SELECT_OPTIONS_CONTAINER = document.getElementById("category-select-options-container");
 
-SELECT_FIRST_TABS_CONTAINER.addEventListener("click", (e) => {
+CATEGORY_SELECT_TABS_CONTAINER.addEventListener("click", (e) => {
  if (e.target.tagName !== "BUTTON") return;
- for (let elem of SELECT_FIRST_TABS_CONTAINER.children) elem.classList.remove("tw-selected-tab");
+ for (let elem of CATEGORY_SELECT_TABS_CONTAINER.children) elem.classList.remove("tw-selected-tab");
  e.target.classList.add("tw-selected-tab"); // add the "selected" style to the tab which is clicked
 
- for (let elem of SELECT_FIRST_TAB_OPTIONS_CONTAINER.children) {
+ for (let elem of CATEGORY_SELECT_OPTIONS_CONTAINER.children) {
   elem.classList.add("tw-w-0", "tw-h-0", "tw-invisible", "tw-absolute"); // remove all tab options
 
   if (elem.id === e.target.dataset.controls) {
@@ -40,33 +40,32 @@ SELECT_FIRST_TABS_CONTAINER.addEventListener("click", (e) => {
 
 // the loop below removes (visually) other tab options in the dropdown, while keeping the options for the first tab (runs every time a page reload, it is not an event handler), making the first tab to be selected by default
 
-for (let elem of SELECT_FIRST_TAB_OPTIONS_CONTAINER.children) {
- if (elem.id !== SELECT_FIRST_TABS_CONTAINER.children["SELECT_FIRST_CATEGORY1_TAB"].dataset.controls)
+for (let elem of CATEGORY_SELECT_OPTIONS_CONTAINER.children) {
+ if (elem.id !== CATEGORY_SELECT_TABS_CONTAINER.children["category-select-residential-tab"].dataset.controls)
   elem.classList.add("tw-w-0", "tw-h-0", "tw-invisible", "tw-absolute");
 }
 
 // DD TABS LOGIC ENDS HERE
 
-const SELECT_FIRST_TOGGLER = document.getElementById("SELECT_FIRST_TOGGLER");
-const SELECT_FIRST_LABEL = document.getElementById("SELECT_FIRST_LABEL");
-const SELECT_FIRST_CHEVRON = document.getElementById("SELECT_FIRST_CHEVRON");
-const SELECT_FIRST_ARROW_UP = document.getElementById("SELECT_FIRST_ARROW_UP");
-const SELECT_FIRST_DROPDOWN = document.getElementById("SELECT_FIRST_DROPDOWN");
-const SELECT_FIRST = document.getElementById("SELECT_FIRST"); // <select> element to send the data to the server
+const CATEGORY_SELECT_TOGGLER = document.getElementById("category-select-toggler");
+const CATEGORY_SELECT_LABEL = document.getElementById("category-select-label");
+const CATEGORY_SELECT_CHEVRON = document.getElementById("category-select-chevron");
+const CATEGORY_SELECT_DROPDOWN = document.getElementById("category-select-dropdown");
+const CATEGORY_SELECT = document.getElementById("category-select"); // <select> element to send the data to the server
 
-SELECT_FIRST.options[0].selected = true; // to reset the value of select to empty string upon page reload
-// const height = SELECT_FIRST_DROPDOWN.offsetHeight + 12;
+CATEGORY_SELECT.options[0].selected = true; // to reset the value of select to empty string upon page reload
+// const height = CATEGORY_SELECT_DROPDOWN.offsetHeight + 12;
 // const width = height * 1.75;
 
-SELECT_FIRST_DROPDOWN.addEventListener("click", (e) => {
- if (e.target.closest("#SELECT_FIRST_TAB_OPTIONS_CONTAINER") && e.target.tagName === "SPAN") {
-  // SELECT_FIRST_TOGGLER.checked = false;
-  SELECT_FIRST_LABEL.childNodes[0].textContent = e.target.textContent;
-  for (let option of SELECT_FIRST.options) {
-   if (option.textContent === e.target.textContent) option.selected = true;
+CATEGORY_SELECT_DROPDOWN.addEventListener("click", (e) => {
+ if (e.target.closest("#category-select-options-container") && e.target.tagName === "SPAN") {
+  // CATEGORY_SELECT_TOGGLER.checked = false;
+  CATEGORY_SELECT_LABEL.childNodes[0].textContent = e.target.textContent;
+  for (let option of CATEGORY_SELECT.options) {
+   if (option.textContent.toLowercase() === e.target.textContent.toLowercase()) option.selected = true;
   }
 
-  for (let div of SELECT_FIRST_TAB_OPTIONS_CONTAINER.children) {
+  for (let div of CATEGORY_SELECT_OPTIONS_CONTAINER.children) {
    for (let span of div.children) {
     span.classList.remove("tw-selected-option");
     if (span === e.target) e.target.classList.add("tw-selected-option");
@@ -74,46 +73,48 @@ SELECT_FIRST_DROPDOWN.addEventListener("click", (e) => {
   }
  }
 
- if (e.target.id === "SELECT_FIRST_DD_DONE_BUTTON") SELECT_FIRST_TOGGLER.checked = false;
- if (e.target.id === "SELECT_FIRST_DD_RESET_BUTTON") {
-  SELECT_FIRST.value = null;
-  SELECT_FIRST_LABEL.childNodes[0].textContent = "Category1";
-  // SELECT_FIRST_TOGGLER.checked = false;
+ if (e.target.id === "category-select-done-btn") CATEGORY_SELECT_TOGGLER.checked = false;
+ if (e.target.id === "category-select-reset-btn") {
+  CATEGORY_SELECT.value = null;
+  CATEGORY_SELECT_LABEL.childNodes[0].textContent = "Category";
+  // CATEGORY_SELECT_TOGGLER.checked = false;
 
-  for (let options of SELECT_FIRST_TAB_OPTIONS_CONTAINER.children) {
+  for (let options of CATEGORY_SELECT_OPTIONS_CONTAINER.children) {
    for (let option of options.children) {
     option.classList.remove("tw-selected-option");
    }
   }
 
-  SELECT_FIRST_TABS_CONTAINER.children["SELECT_FIRST_CATEGORY1_TAB"].click();
+  CATEGORY_SELECT_TABS_CONTAINER.children["category-select-residential-tab"].click();
  }
 });
 
 // SELECT_SECOND DD (DROPDOWN)
 
-const SELECT_SECOND_TOGGLER = document.getElementById("SELECT_SECOND_TOGGLER");
-const SELECT_SECOND_LABEL = document.getElementById("SELECT_SECOND_LABEL");
-const SELECT_SECOND_CHEVRON = document.getElementById("SELECT_SECOND_CHEVRON");
-const SELECT_SECOND_ARROW_UP = document.getElementById("SELECT_SECOND_ARROW_UP");
-const SELECT_SECOND_DROPDOWN = document.getElementById("SELECT_SECOND_DROPDOWN");
+const BEDSBATHS_SELECT_TOGGLER = document.getElementById("bedsbaths-select-toggler");
+const BEDSBATHS_SELECT_LABEL = document.getElementById("bedsbaths-select-label");
+const BEDSBATHS_SELECT_CHEVRON = document.getElementById("bedsbaths-select-chevron");
+const BEDSBATHS_SELECT_ARROW_UP = document.getElementById("bedsbaths-select-arrow-up");
+const BEDSBATHS_SELECT_DROPDOWN = document.getElementById("bedsbaths-select-dropdown");
+const BEDROOMS_OPTIONS_CONTAINER = document.getElementById("bedrooms-options-container");
+const BATHROOMS_OPTIONS_CONTAINER = document.getElementById("bathrooms-options-container");
 
-SELECT_SECOND_DROPDOWN.addEventListener("click", (e) => {
+BEDSBATHS_SELECT_DROPDOWN.addEventListener("click", (e) => {
  if (
-  (e.target.closest("#BEDS_OPTIONS_CONTAINER") || e.target.closest("#BATHS_OPTIONS_CONTAINER")) &&
+  (e.target.closest("#bedrooms-options-container") || e.target.closest("#bathrooms-options-container")) &&
   e.target.tagName === "LABEL"
  ) {
   e.target.classList.toggle("tw-checked-option");
   e.target.classList.toggle("hover:tw-bg-gray-100");
 
-  if (SELECT_SECOND_DROPDOWN.querySelectorAll(".tw-checked-option").length) {
+  if (BEDSBATHS_SELECT_DROPDOWN.querySelectorAll(".tw-checked-option").length) {
    const beds = [],
     baths = [];
-   SELECT_SECOND_LABEL.childNodes[0].textContent = "";
-   for (let node of BEDS_OPTIONS_CONTAINER.querySelectorAll(".tw-checked-option")) {
+   BEDSBATHS_SELECT_LABEL.childNodes[0].textContent = "";
+   for (let node of BEDROOMS_OPTIONS_CONTAINER.querySelectorAll(".tw-checked-option")) {
     beds.push(node.textContent);
    }
-   for (let node of BATHS_OPTIONS_CONTAINER.querySelectorAll(".tw-checked-option")) {
+   for (let node of BATHROOMS_OPTIONS_CONTAINER.querySelectorAll(".tw-checked-option")) {
     baths.push(node.textContent);
    }
 
@@ -126,21 +127,21 @@ SELECT_SECOND_DROPDOWN.addEventListener("click", (e) => {
     .filter((item) => !isNaN(item))
     .reduce((total, num) => total + num, 0);
 
-   const bedsString = beds.join(", ") + (numberOfBeds ? (numberOfBeds === 1 ? " Bed" : " Beds") : "");
-   const bathsString = baths.join(", ") + (numberOfBaths ? (numberOfBaths === 1 ? " Bath" : " Baths") : "");
+   const bedsString = beds.join(", ") + (numberOfBeds ? (numberOfBeds === 1 ? " Bedroom" : " Bedrooms") : "");
+   const bathsString = baths.join(", ") + (numberOfBaths ? (numberOfBaths === 1 ? " Bathroom" : " Bathrooms") : "");
 
-   SELECT_SECOND_LABEL.childNodes[0].textContent =
+   BEDSBATHS_SELECT_LABEL.childNodes[0].textContent =
     bedsString + (!bedsString.length || !bathsString.length ? "" : " / ") + bathsString;
   } else {
-   SELECT_SECOND_LABEL.childNodes[0].textContent = "Beds & Baths";
+   BEDSBATHS_SELECT_LABEL.childNodes[0].textContent = "Bedrooms & Bathrooms";
   }
  }
 
- if (e.target.id === "SELECT_SECOND_DD_DONE_BUTTON") SELECT_SECOND_TOGGLER.checked = false;
- if (e.target.id === "SELECT_SECOND_DD_RESET_BUTTON") {
-  SELECT_SECOND_LABEL.childNodes[0].textContent = "Beds & Baths";
+ if (e.target.id === "bedsbaths-select-done-btn") BEDSBATHS_SELECT_TOGGLER.checked = false;
+ if (e.target.id === "bedsbaths-select-reset-btn") {
+  BEDSBATHS_SELECT_LABEL.childNodes[0].textContent = "Bedrooms & Bathrooms";
 
-  for (let selected of SELECT_SECOND_DROPDOWN.querySelectorAll(".tw-checked-option")) {
+  for (let selected of BEDSBATHS_SELECT_DROPDOWN.querySelectorAll(".tw-checked-option")) {
    selected.click();
   }
  }
@@ -226,34 +227,34 @@ PRICE_FILTER_CONTAINER.addEventListener("change", (e) => {
 // DD CLOSE-WHEN-CLICKED-OUTSIDE LOGIC
 
 document.addEventListener("click", (e) => {
- if (!e.target.closest("#SELECT_FIRST_CONTAINER")) SELECT_FIRST_TOGGLER.checked = false;
+ if (!e.target.closest("#category-select-container")) CATEGORY_SELECT_TOGGLER.checked = false;
 
- if (SELECT_FIRST_TOGGLER.checked) {
-  SELECT_FIRST_DROPDOWN.classList.remove("tw-invisible");
-  SELECT_FIRST_DROPDOWN.style.paddingBottom = "12px";
-  // SELECT_FIRST_DROPDOWN.style.maxHeight = height + "px";
-  // SELECT_FIRST_DROPDOWN.style.width = width + "px";
-  SELECT_FIRST_CHEVRON.style.transform = "rotate(180deg)";
+ if (CATEGORY_SELECT_TOGGLER.checked) {
+  CATEGORY_SELECT_DROPDOWN.classList.remove("tw-invisible");
+  CATEGORY_SELECT_DROPDOWN.style.paddingBottom = "12px";
+  // CATEGORY_SELECT_DROPDOWN.style.maxHeight = height + "px";
+  // CATEGORY_SELECT_DROPDOWN.style.width = width + "px";
+  CATEGORY_SELECT_CHEVRON.style.transform = "rotate(180deg)";
  } else {
-  SELECT_FIRST_DROPDOWN.classList.add("tw-invisible");
-  // SELECT_FIRST_DROPDOWN.style.paddingBottom = "";
-  // SELECT_FIRST_DROPDOWN.style.maxHeight = 0;
-  SELECT_FIRST_CHEVRON.style.transform = "rotateY(360deg)";
+  CATEGORY_SELECT_DROPDOWN.classList.add("tw-invisible");
+  // CATEGORY_SELECT_DROPDOWN.style.paddingBottom = "";
+  // CATEGORY_SELECT_DROPDOWN.style.maxHeight = 0;
+  CATEGORY_SELECT_CHEVRON.style.transform = "rotateY(360deg)";
  }
 
- if (!e.target.closest("#SELECT_SECOND_CONTAINER")) SELECT_SECOND_TOGGLER.checked = false;
+ if (!e.target.closest("#bedsbaths-select-container")) BEDSBATHS_SELECT_TOGGLER.checked = false;
 
- if (SELECT_SECOND_TOGGLER.checked) {
-  SELECT_SECOND_DROPDOWN.classList.remove("tw-invisible");
-  SELECT_SECOND_DROPDOWN.style.paddingBottom = "12px";
-  // SELECT_SECOND_DROPDOWN.style.maxHeight = height + "px";
-  // SELECT_SECOND_DROPDOWN.style.width = width + "px";
-  SELECT_SECOND_CHEVRON.style.transform = "rotate(180deg)";
+ if (BEDSBATHS_SELECT_TOGGLER.checked) {
+  BEDSBATHS_SELECT_DROPDOWN.classList.remove("tw-invisible");
+  BEDSBATHS_SELECT_DROPDOWN.style.paddingBottom = "12px";
+  // BEDSBATHS_SELECT_DROPDOWN.style.maxHeight = height + "px";
+  // BEDSBATHS_SELECT_DROPDOWN.style.width = width + "px";
+  BEDSBATHS_SELECT_CHEVRON.style.transform = "rotate(180deg)";
  } else {
-  SELECT_SECOND_DROPDOWN.classList.add("tw-invisible");
-  // SELECT_SECOND_DROPDOWN.style.paddingBottom = "";
-  // SELECT_SECOND_DROPDOWN.style.maxHeight = 0;
-  SELECT_SECOND_CHEVRON.style.transform = "rotateY(360deg)";
+  BEDSBATHS_SELECT_DROPDOWN.classList.add("tw-invisible");
+  // BEDSBATHS_SELECT_DROPDOWN.style.paddingBottom = "";
+  // BEDSBATHS_SELECT_DROPDOWN.style.maxHeight = 0;
+  BEDSBATHS_SELECT_CHEVRON.style.transform = "rotateY(360deg)";
  }
 
  console.log(`Range ${MINIMUM_FIELD.value} - ${MAXIMUM_FIELD.value}`);
@@ -279,6 +280,7 @@ document.addEventListener("click", (e) => {
 // DD ORIENTATION CHANGE LOGIC
 
 function flipDropDown(dropdown) {
+ if (!dropdown) return;
  let coords = dropdown.getBoundingClientRect();
  if (coords.left < 5) {
   dropdown.classList.remove("tw-right-0");
@@ -303,3 +305,8 @@ for (let dropdown of document.querySelectorAll(".tw-dropdown")) {
 window.addEventListener("resize", function (e) {
  flipDropDown(document.querySelector(".tw-dropdown:not(.tw-invisible)"));
 });
+
+window.onerror = (msg, url, line, col, error) => {
+ const extra = (!col ? '' : `\ncolumn: ${col}`) + (!error ? '' : `\nerror: ${error}`);
+ console.log(`Error: ${msg}\nurl: ${url}\nline: ${line}${extra}`);
+};

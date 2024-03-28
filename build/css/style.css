@@ -1042,25 +1042,25 @@ video {
   box-shadow: 0 0 8px -3px black;
 }
 
-/* #SELECT_FIRST_CONTAINER {
+/* #category-select-container {
  filter: drop-shadow(0 0 2px black);
 } */
 
-/* #SELECT_FIRST_DROPDOWN {
+/* #category-select-dropdown {
  clip-path: polygon(0 100%, 100% 100%, 100% 8px, calc(100% - 12px) 8px, calc(100% - 20px) 0, calc(100% - 28px) 8px, 0% 8px);
 } */
 
-/* #SELECT_FIRST_DROPDOWN {
+/* #category-select-dropdown {
  clip-path: url(#shape);
 } */
 
 /* DD animations */
 
-/* #SELECT_FIRST_DROPDOWN {
+/* #category-select-dropdown {
  transition: .4s linear, width 0s;
 }
 
-#SELECT_FIRST_CHEVRON {
+#category-select-chevron {
  transition: .4s linear;
 } */
 
