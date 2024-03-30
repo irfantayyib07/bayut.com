@@ -13,15 +13,15 @@
   class="tw-grid !h-auto tw-text-left tw-font-normal tw-basis-3/4 tw-grid-cols-1 tw-gap-3 tw-rounded-md tw-bg-black tw-bg-opacity-50 tw-p-4 sm:tw-min-w-[560px] sm:tw-grid-cols-12"
   novalidate>
   <!-- ROW FIRST -->
-  <!-- LOCATION SEARCH BAR (COLUMN FIRST) -->
-  <div class="tw-flex sm:tw-col-span-8">
-   <label class="tw-flex tw-cursor-pointer tw-rounded-bl-md tw-rounded-tl-md tw-bg-white tw-p-3" for="location">
-    <img
-     src="./assets/location.svg" alt="location" class="tw-w-6 tw-self-center" />
-     <i class="bi bi-geo-alt-fill"></i>
-    </label>
+  <!-- KEYWORDS SEARCH BAR (COLUMN FIRST) -->
+  <div class="tw-flex tw-rounded-md sm:tw-col-span-8 sm:tw-order-none">
+   <label class="tw-w-10 tw-flex tw-cursor-pointer tw-justify-center tw-rounded-bl-md tw-rounded-tl-md tw-bg-white"
+    for="keywords">
+    <img src="./assets/search.svg" alt="location" class="tw-w-5" />
+    <i class="bi bi-geo-alt-fill"></i>
+   </label>
    <input class="tw-w-full tw-rounded-md tw-rounded-bl-none tw-rounded-tl-none tw-px-2 tw-py-3 focus:tw-outline-none"
-    type="text" id="location" placeholder="Enter Location" />
+    type="text" id="keywords" placeholder="Enter Keywords" />
   </div>
   <!-- RADIO BUTTONS (RENT, BUY, OFFPLAN) (COLUMN SECOND) -->
   <div class="tw-flex tw-flex-wrap tw-rounded-md tw-bg-white tw-p-1 sm:tw-col-start-9 sm:tw-col-end-13"
@@ -32,11 +32,25 @@
    <label for="rent" class="tw-ff-radio-label" id="rent-label">Rent</label>
   </div>
   <!-- ROW SECOND -->
-  <div class="tw-flex tw-flex-wrap tw-gap-2 sm:tw-col-span-8 sm:tw-flex-nowrap">
+  <!-- LOCATION SEARCH BAR (COLUMN FIRST) -->
+  <div class="tw-flex sm:tw-col-span-8 tw-row-start-2">
+   <label class="tw-w-10 tw-flex tw-cursor-pointer tw-rounded-bl-md tw-justify-center tw-rounded-tl-md tw-bg-white"
+    for="location">
+    <img src="./assets/location.svg" alt="location" class="tw-w-6" />
+    <i class="bi bi-geo-alt-fill"></i>
+   </label>
+   <input class="tw-w-full tw-rounded-md tw-rounded-bl-none tw-rounded-tl-none tw-px-2 tw-py-3 focus:tw-outline-none"
+    type="text" id="location" placeholder="Enter Location" />
+  </div>
+  <!-- FIND BUTTON -->
+  <button
+   class="tw-rounded-md tw-bg-green-600 tw-px-2 tw-py-3 tw-text-white sm:tw-col-start-9 sm:tw-col-end-13 tw-order-last sm:tw-order-none">Find</button>
+  <!-- ROW THIRD -->
+  <div class="tw-flex tw-flex-wrap tw-gap-2 sm:tw-col-span-12 sm:tw-flex-nowrap">
    <!-- SELECT FIRST -->
    <!-- DROP DOWN TOGGLE -->
    <div id="category-select-container"
-    class="tw-relative tw-w-7 tw-min-w-32 tw-flex-grow tw-cursor-pointer sm:tw-min-w-0">
+    class="tw-relative tw-w-7 tw-min-w-32 tw-basis-1/2 tw-flex-grow tw-cursor-pointer sm:tw-min-w-0">
     <input type="checkbox" id="category-select-toggler" class="tw-hidden" />
     <label for="category-select-toggler" id="category-select-label" class="tw-ff-select"><span
       class="tw-overflow-hidden tw-text-ellipsis tw-whitespace-nowrap">Category</span>
@@ -79,7 +93,8 @@
       </div>
       <!-- TAB 2 CONTENT -->
       <div class="tw-grid tw-gap-2 sm:tw-grid-cols-2" id="category-select-commercial-options">
-       <span class="tw-ff-tab-option hover:tw-bg-gray-100" id="category-select-commercial-commercialproperty">Commerical Property</span>
+       <span class="tw-ff-tab-option hover:tw-bg-gray-100" id="category-select-commercial-commercialproperty">Commerical
+        Property</span>
       </div>
      </div>
      <div class="category-select-dd-button-container tw-flex tw-flex-grow tw-gap-2">
@@ -101,7 +116,7 @@
 
    <!-- DROP DOWN TOGGLE -->
    <div id="bedsbaths-select-container"
-    class="tw-relative tw-w-7 tw-min-w-32 tw-flex-grow tw-cursor-pointer sm:tw-min-w-0">
+    class="tw-relative tw-w-7 tw-min-w-32 tw-basis-1/2 tw-flex-grow tw-cursor-pointer sm:tw-min-w-0">
     <input type="checkbox" id="bedsbaths-select-toggler" class="tw-hidden" />
     <label for="bedsbaths-select-toggler" id="bedsbaths-select-label" class="tw-ff-select"><span
       class="tw-overflow-hidden tw-text-ellipsis tw-whitespace-nowrap">Bedrooms & Bathrooms</span>
@@ -161,14 +176,15 @@
    <!-- SELECT THIRD -->
 
    <!-- DROP DOWN TOGGLE -->
-   <div id="amount-select-container" class="tw-relative tw-w-7 tw-min-w-32 tw-flex-grow tw-cursor-pointer sm:tw-min-w-0">
+   <div id="amount-select-container"
+    class="tw-relative tw-w-7 tw-min-w-32 tw-basis-1/2 tw-flex-grow tw-cursor-pointer sm:tw-min-w-0">
     <input type="checkbox" id="amount-select-toggler" class="tw-hidden" />
     <label for="amount-select-toggler" id="amount-select-label" class="tw-ff-select"><span
       class="tw-overflow-hidden tw-text-ellipsis tw-whitespace-nowrap">Price (AED)</span>
      <span class="tw-arrow-down tw-self-center" id="amount-select-chevron"></span>
     </label>
     <!-- DROP DOWN MENU -->
-    <div class="tw-ff-dd tw-dropdown tw-right-0 tw-invisible" id="amount-select-dropdown">
+    <div class="tw-ff-dd tw-dropdown tw-right-0 tw-invisible tw-w-64" id="amount-select-dropdown">
      <span id="amount-select-arrow-up"
       class="tw-arrow-up tw-absolute tw-bottom-full tw-right-[14px] tw-border-[8px] tw-border-b-white"></span>
      <!-- RANGE SELECTOR -->
@@ -199,11 +215,7 @@
     <!-- DROPDOWN MENU ENDS HERE -->
    </div>
   </div>
-  <!-- FIND BUTTON -->
-  <button
-   class="tw-rounded-md tw-bg-green-600 tw-px-2 tw-py-3 tw-text-white sm:tw-col-start-9 sm:tw-col-end-13">Find</button>
-  <!-- ROW THIRD -->
-  <a class="tw-bg-blue-200 tw-text-black tw-rounded-md tw-px-2 tw-py-3 sm:tw-col-span-12" href="">Search 2.0</a>
+
  </form>
 
  <script src="./script.js"></script>
