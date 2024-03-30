@@ -47,7 +47,7 @@
 }
 
 .tw-ff-dd {
- @apply tw-shadow-custom tw-absolute tw-top-full tw-z-10 tw-mt-3 tw-flex tw-w-max tw-flex-col tw-gap-6 tw-rounded-lg tw-bg-white tw-p-3 sm:tw-w-[325px];
+ @apply tw-shadow-custom tw-absolute tw-top-full tw-z-10 tw-mt-3 tw-flex tw-min-w-60 tw-flex-col tw-gap-6 tw-rounded-lg tw-bg-white tw-p-3 sm:tw-w-[325px];
 }
 
 .tw-ff-tab-option {
@@ -56,6 +56,15 @@
 
 .tw-ff-check-option {
  @apply tw-cursor-pointer tw-select-none tw-rounded-md tw-rounded-l-full tw-rounded-r-full tw-border tw-px-4 tw-py-1 tw-text-center tw-text-sm;
+}
+
+#filter-form label {
+ margin: 0;
+}
+
+#filter-form a:hover {
+ color: unset;
+ text-decoration: unset;
 }
 
 /* #category-select-container {

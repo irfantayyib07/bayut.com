@@ -4,8 +4,8 @@
   "description": "",
   "main": "tailwind-default.config.js",
   "scripts": {
-    "tailwind": "npx tailwindcss -i src/input.css -o build/css/style.css -w --minify",
-    "buildcss": "npx tailwindcss -o build/css/style.css --minify",
+    "tailwind": "npx tailwindcss -i src/input.css -o build/css/style.css -w",
+    "buildcss": "npx postcss build/css/style.css -u cssnano -d build/css --no-map",
     "prettier": "prettier --write ."
   },
   "keywords": [],
@@ -13,5 +13,9 @@
   "license": "ISC",
   "dependencies": {
     "prettier-plugin-tailwindcss": "^0.5.12"
+  },
+  "devDependencies": {
+    "cssnano": "^6.1.2",
+    "postcss-cli": "^11.0.0"
   }
 }

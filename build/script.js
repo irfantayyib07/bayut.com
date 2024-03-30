@@ -76,8 +76,12 @@ CATEGORY_SELECT_DROPDOWN.addEventListener("click", (e) => {
   // CATEGORY_SELECT_TOGGLER.checked = false;
   CATEGORY_SELECT_LABEL.childNodes[0].textContent = e.target.textContent;
   CATEGORY_SELECT.querySelector(`option[value="${e.target.textContent.toLowerCase()}"]`).selected = true;
-  CATEGORY_SELECT_OPTIONS_CONTAINER.querySelector(".tw-selected-option")?.classList.remove("tw-selected-option");
+  for (let span of CATEGORY_SELECT_OPTIONS_CONTAINER.querySelectorAll("span")) {
+   span.classList.remove("tw-selected-option");
+   span.classList.add("hover:tw-bg-gray-100");
+  }
   e.target.classList.add("tw-selected-option");
+  e.target.classList.remove("hover:tw-bg-gray-100");
  }
 
  if (e.target.id === "category-select-done-btn") CATEGORY_SELECT_TOGGLER.checked = false;

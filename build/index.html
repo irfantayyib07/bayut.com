@@ -15,8 +15,11 @@
   <!-- ROW FIRST -->
   <!-- LOCATION SEARCH BAR (COLUMN FIRST) -->
   <div class="tw-flex sm:tw-col-span-8">
-   <label class="tw-flex tw-cursor-pointer tw-rounded-bl-md tw-rounded-tl-md tw-bg-white tw-p-3" for="location"><img
-     src="./assets/location.svg" alt="location" class="tw-w-6 tw-self-center" /></label>
+   <label class="tw-flex tw-cursor-pointer tw-rounded-bl-md tw-rounded-tl-md tw-bg-white tw-p-3" for="location">
+    <img
+     src="./assets/location.svg" alt="location" class="tw-w-6 tw-self-center" />
+     <i class="bi bi-geo-alt-fill"></i>
+    </label>
    <input class="tw-w-full tw-rounded-md tw-rounded-bl-none tw-rounded-tl-none tw-px-2 tw-py-3 focus:tw-outline-none"
     type="text" id="location" placeholder="Enter Location" />
   </div>
@@ -55,12 +58,12 @@
      <!-- TABS -->
      <div class="tw-flex tw-w-full" id="category-select-tabs-container">
       <button type="button"
-       class="tw-selected-tab tw-flex-1 tw-cursor-pointer tw-select-none tw-border-b-2 tw-px-2 tw-pb-1 tw-pt-3 tw-text-center"
+       class="tw-selected-tab tw-flex-1 tw-cursor-pointer tw-select-none tw-border-b-2 tw-px-2 tw-pb-1 tw-pt-3 tw-text-center focus:tw-outline-none"
        id="category-select-residential-tab" data-controls="category-select-residential-options">
        Residential
       </button>
       <button type="button"
-       class="tw-flex-1 tw-cursor-pointer tw-select-none tw-border-b-2 tw-px-2 tw-pb-1 tw-pt-3 tw-text-center"
+       class="tw-flex-1 tw-cursor-pointer tw-select-none tw-border-b-2 tw-px-2 tw-pb-1 tw-pt-3 tw-text-center focus:tw-outline-none"
        id="category-select-commercial-tab" data-controls="category-select-commercial-options">
        Commercial
       </button>
