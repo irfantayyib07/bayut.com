@@ -1,5 +1,9 @@
 "use strict";
 
+function removeExtraWhitespace(inputString) {
+ return inputString.replace(/[\s\n]+/g, ' ').trim();
+}
+
 const FILTER_FORM = document.getElementById("filter-form");
 const OWNERSHIP_OPTIONS_CONTAINER = document.getElementById("ownership-options-container");
 const CATEGORY_SELECT_TABS_CONTAINER = document.getElementById("category-select-tabs-container");
@@ -75,7 +79,8 @@ CATEGORY_SELECT_DROPDOWN.addEventListener("click", (e) => {
  if (e.target.closest("#category-select-options-container") && e.target.tagName === "SPAN") {
   // CATEGORY_SELECT_TOGGLER.checked = false;
   CATEGORY_SELECT_LABEL.childNodes[0].textContent = e.target.textContent;
-  CATEGORY_SELECT.querySelector(`option[value="${e.target.textContent.toLowerCase()}"]`).selected = true;
+  console.log(e.target.textContent.toLowerCase());
+  CATEGORY_SELECT.querySelector(`option[value="${removeExtraWhitespace(e.target.textContent.toLowerCase())}"]`).selected = true;
   for (let span of CATEGORY_SELECT_OPTIONS_CONTAINER.querySelectorAll("span")) {
    span.classList.remove("tw-selected-option");
    span.classList.add("hover:tw-bg-gray-100");
