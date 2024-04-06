@@ -75,7 +75,7 @@ CATEGORY_SELECT_DROPDOWN.addEventListener("click", (e) => {
  if (e.target.closest("#category-select-options-container") && e.target.tagName === "SPAN") {
   // CATEGORY_SELECT_TOGGLER.checked = false;
   CATEGORY_SELECT_LABEL.childNodes[0].textContent = e.target.textContent;
-  CATEGORY_SELECT.querySelector(`option[value="${e.target.textContent.toLowerCase()}"]`).selected = true;
+  CATEGORY_SELECT.querySelector(`option[value="${e.target.textContent.toLowerCase().replace(/[\s\n]+/g, ' ').trim()}"]`).selected = true;
   for (let span of CATEGORY_SELECT_OPTIONS_CONTAINER.querySelectorAll("span")) {
    span.classList.remove("tw-selected-option");
    span.classList.add("hover:tw-bg-gray-100");
