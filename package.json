@@ -4,7 +4,7 @@
   "description": "",
   "main": "tailwind-default.config.js",
   "scripts": {
-    "tailwind": "npx tailwindcss -i src/input.css -o build/css/style.css -w",
+    "tailwind": "npx tailwindcss -i src/input.css -o build/css/style.css --watch",
     "buildcss": "npx postcss build/css/style.css -u cssnano -d build/css --no-map",
     "prettier": "prettier --write ."
   },
